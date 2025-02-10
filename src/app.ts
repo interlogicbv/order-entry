@@ -48,14 +48,20 @@ const generateOutputFile = (inputObject: any, file: string) => {
     });
 
     // Get pickup and delivery data
-    let data =
-      inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
-        "cac:ConsolidatedShipment"
-      ]["cac:ShipmentStage"][
-        inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
-          "cac:ConsolidatedShipment"
-        ]["cac:ShipmentStage"].length - 1
-      ]["cac:TransportEvent"];
+    let events = inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
+      "cac:ConsolidatedShipment"
+    ]["cac:ShipmentStage"].filter(
+      (i: any) => i["cbc:ShipmentStageType"] === "planning"
+    );
+
+    let data;
+    if (events.length === 1) {
+      // Olny one event
+      data = events[0]["cac:TransportEvent"];
+    } else {
+      // More than one event
+      data = events.map((e: any) => e["cac:TransportEvent"]);
+    }
 
     // Build the XML file
     const outputContent = builder.build({
@@ -78,7 +84,13 @@ const generateOutputFile = (inputObject: any, file: string) => {
                 ]["cbc:ID"],
               reference: `${inputObject.Manifest["cbc:ID"]} ${inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cbc:ID"]}`,
               pickupaddress: {
-                reference: `${inputObject.Manifest["cbc:ID"]}/${inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cbc:ID"]}`,
+                reference: inputObject.Manifest["cac:Shipment"][
+                  "cac:Consignment"
+                ]["cac:ConsolidatedShipment"]["cac:Consignment"][
+                  "cac:DocumentReference"
+                ].find((d: any) => d["cbc:ID"]["#text"] === 101)[
+                  "cbc:DocumentTypeCode"
+                ],
                 address_id: {
                   $matchmode: "1",
                   "#text": data.find(
@@ -116,7 +128,13 @@ const generateOutputFile = (inputObject: any, file: string) => {
                 },
               },
               deliveryaddress: {
-                reference: `${inputObject.Manifest["cbc:ID"]}/${inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cbc:ID"]}`,
+                reference: inputObject.Manifest["cac:Shipment"][
+                  "cac:Consignment"
+                ]["cac:ConsolidatedShipment"]["cac:Consignment"][
+                  "cac:DocumentReference"
+                ].find((d: any) => d["cbc:ID"]["#text"] === 103)[
+                  "cbc:DocumentTypeCode"
+                ],
                 address_id: {
                   $matchmode: "1",
                   "#text": data.find((d: any) => d["cbc:Description"] === "to")[
@@ -190,6 +208,8 @@ const generateOutputFile = (inputObject: any, file: string) => {
     const outputPath = path.resolve(`${outputDirectory}/${ref}-${file}`);
     fs.writeFileSync(outputPath, outputContent);
     console.log(`✅ Successfully generated: ${ref}-${file}`);
+    data = [];
+    events = [];
   } catch (error) {
     console.error(`❌ Error generating output file: ${file}: `, error);
   }

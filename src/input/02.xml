@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Manifest xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1"
+          xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+          xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+          xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+          xmlns="urn:oasis:names:specification:ubl:schema:xsd:Manifest-2"
+          xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2">
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>urn:neelevat.com:ubl-2.3-customizations:2023-01</cbc:CustomizationID>
+   <cbc:ProfileID schemeAgencyID="https://neelevat.com">urn:neelevat.com:profile:Manifest:ver1.0</cbc:ProfileID>
+   <cbc:ID>1802269812</cbc:ID>
+   <cbc:ManifestType>Manifest</cbc:ManifestType>
+   <cac:SendingLogisticsOperatorParty>
+      <cac:PartyName>
+         <cbc:Name>Neele-Vat</cbc:Name>
+      </cac:PartyName>
+      <cac:Contact>
+         <cbc:Name>Linda.Ouwendijk-Bouwmeester@neeleva</cbc:Name>
+      </cac:Contact>
+   </cac:SendingLogisticsOperatorParty>
+   <cac:Shipment>
+      <cbc:ID>1802269812</cbc:ID>
+      <cac:Consignment>
+         <cbc:ID>ED 18 ROSTOCK 3781</cbc:ID>
+         <cbc:ConsignorAssignedID>ED 18 ROSTOCK 3781</cbc:ConsignorAssignedID>
+         <cbc:GrossWeightMeasure unitCode="KGM">3120.000</cbc:GrossWeightMeasure>
+         <cbc:NetWeightMeasure unitCode="KGM">0.000</cbc:NetWeightMeasure>
+         <cbc:ChargeableWeightMeasure unitCode="KGM">4200.000</cbc:ChargeableWeightMeasure>
+         <cbc:GrossVolumeMeasure unitCode="MTQ">12.727</cbc:GrossVolumeMeasure>
+         <cbc:TotalGoodsItemQuantity unitCode="CO">4.000</cbc:TotalGoodsItemQuantity>
+         <cac:ConsolidatedShipment>
+            <cbc:ID>1021473781</cbc:ID>
+            <cac:Consignment>
+               <cbc:ID>1021473781</cbc:ID>
+               <cbc:TotalInvoiceAmount currencyID="EUR">0.00</cbc:TotalInvoiceAmount>
+               <cbc:TariffCode>AI</cbc:TariffCode>
+               <cbc:GrossWeightMeasure unitCode="KGM">3120.000</cbc:GrossWeightMeasure>
+               <cbc:NetWeightMeasure unitCode="KGM">0.000</cbc:NetWeightMeasure>
+               <cbc:ChargeableWeightMeasure unitCode="KGM">4200.000</cbc:ChargeableWeightMeasure>
+               <cbc:GrossVolumeMeasure unitCode="MTR">2.400</cbc:GrossVolumeMeasure>
+               <cbc:LoadingLengthMeasure unitCode="MTR">2.400</cbc:LoadingLengthMeasure>
+               <cbc:HandlingInstructions>PALlRUILLD:false</cbc:HandlingInstructions>
+               <cbc:HandlingInstructions>PALLRUILLS:false</cbc:HandlingInstructions>
+               <cbc:HandlingInstructions>TEMPERATUR:false</cbc:HandlingInstructions>
+               <cbc:HandlingInstructions>PALLETS:0</cbc:HandlingInstructions>
+               <cbc:HandlingInstructions>STAPELBAAR:false</cbc:HandlingInstructions>
+               <cbc:TotalGoodsItemQuantity unitCode="P5">4.000</cbc:TotalGoodsItemQuantity>
+               <cac:RequestedPickupTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-10</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+               </cac:RequestedPickupTransportEvent>
+               <cac:RequestedDeliveryTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-13</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+               </cac:RequestedDeliveryTransportEvent>
+               <cac:ConsigneeParty>
+                  <cac:PartyName>
+                     <cbc:Name>Singer Oil&amp;Technik GmbH</cbc:Name>
+                  </cac:PartyName>
+                  <cac:PhysicalLocation>
+                     <cac:Address>
+                        <cbc:CityName>Rostock</cbc:CityName>
+                        <cbc:PostalZone>18069</cbc:PostalZone>
+                        <cac:AddressLine>
+                           <cbc:Line>Oll-Daniel Weg 5</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                           <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+                        </cac:Country>
+                     </cac:Address>
+                     <cac:LocationCoordinate>
+                        <cbc:LatitudeDegreesMeasure unitCode="dd">12.078360000120</cbc:LatitudeDegreesMeasure>
+                        <cbc:LongitudeDegreesMeasure unitCode="dd">54.106950000128</cbc:LongitudeDegreesMeasure>
+                     </cac:LocationCoordinate>
+                  </cac:PhysicalLocation>
+               </cac:ConsigneeParty>
+               <cac:ConsignorParty>
+                  <cac:PartyName>
+                     <cbc:Name>Oliehandel Klaas de Boer BV</cbc:Name>
+                  </cac:PartyName>
+                  <cac:PhysicalLocation>
+                     <cac:Address>
+                        <cbc:CityName>URK</cbc:CityName>
+                        <cbc:PostalZone>8321 EH</cbc:PostalZone>
+                        <cac:AddressLine>
+                           <cbc:Line>Klifweg 11</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                           <cbc:IdentificationCode>NL</cbc:IdentificationCode>
+                        </cac:Country>
+                     </cac:Address>
+                     <cac:LocationCoordinate>
+                        <cbc:LatitudeDegreesMeasure unitCode="dd">5.6019899999680</cbc:LatitudeDegreesMeasure>
+                        <cbc:LongitudeDegreesMeasure unitCode="dd">52.661040000107</cbc:LongitudeDegreesMeasure>
+                     </cac:LocationCoordinate>
+                  </cac:PhysicalLocation>
+               </cac:ConsignorParty>
+               <cac:OriginalDespatchParty>
+                  <cac:PartyName>
+                     <cbc:Name>Oliehandel Klaas de Boer</cbc:Name>
+                  </cac:PartyName>
+                  <cac:PhysicalLocation>
+                     <cac:ValidityPeriod>
+                        <cbc:StartTime>08:00:00</cbc:StartTime>
+                        <cbc:EndTime>14:00:00</cbc:EndTime>
+                     </cac:ValidityPeriod>
+                     <cac:Address>
+                        <cbc:CityName>IJmuiden</cbc:CityName>
+                        <cbc:PostalZone>1976 CB</cbc:PostalZone>
+                        <cac:AddressLine>
+                           <cbc:Line>Trawlerkade 58</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                           <cbc:IdentificationCode>NL</cbc:IdentificationCode>
+                        </cac:Country>
+                     </cac:Address>
+                     <cac:LocationCoordinate>
+                        <cbc:LatitudeDegreesMeasure unitCode="dd">4.5900799999761</cbc:LatitudeDegreesMeasure>
+                        <cbc:LongitudeDegreesMeasure unitCode="dd">52.458830000215</cbc:LongitudeDegreesMeasure>
+                     </cac:LocationCoordinate>
+                  </cac:PhysicalLocation>
+               </cac:OriginalDespatchParty>
+               <cac:FinalDeliveryParty>
+                  <cac:PartyName>
+                     <cbc:Name>Singer Oil&amp;Technik GmbH</cbc:Name>
+                  </cac:PartyName>
+                  <cac:PhysicalLocation>
+                     <cac:ValidityPeriod>
+                        <cbc:StartTime>08:00:00</cbc:StartTime>
+                        <cbc:EndTime>14:00:00</cbc:EndTime>
+                     </cac:ValidityPeriod>
+                     <cac:Address>
+                        <cbc:CityName>Rostock</cbc:CityName>
+                        <cbc:PostalZone>18069</cbc:PostalZone>
+                        <cac:AddressLine>
+                           <cbc:Line>Oll-Daniel Weg 5</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                           <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+                        </cac:Country>
+                     </cac:Address>
+                     <cac:LocationCoordinate>
+                        <cbc:LatitudeDegreesMeasure unitCode="dd">12.078360000120</cbc:LatitudeDegreesMeasure>
+                        <cbc:LongitudeDegreesMeasure unitCode="dd">54.106950000128</cbc:LongitudeDegreesMeasure>
+                     </cac:LocationCoordinate>
+                  </cac:PhysicalLocation>
+               </cac:FinalDeliveryParty>
+               <cac:OriginalDespatchTransportationService>
+                  <cbc:TransportServiceCode>Default</cbc:TransportServiceCode>
+                  <cac:CommodityClassification>
+                     <cbc:CommodityCode name="CHEMICALS HARMLESS"/>
+                  </cac:CommodityClassification>
+               </cac:OriginalDespatchTransportationService>
+               <cac:DocumentReference>
+                  <cbc:ID schemeID="ediReference">Tm000321940-000001021473781</cbc:ID>
+               </cac:DocumentReference>
+               <cac:DocumentReference>
+                  <cbc:ID schemeID="shipmentReference">101</cbc:ID>
+                  <cbc:DocumentTypeCode>4 PALLETS-ROSTOCH</cbc:DocumentTypeCode>
+               </cac:DocumentReference>
+               <cac:DocumentReference>
+                  <cbc:ID schemeID="shipmentReference">103</cbc:ID>
+                  <cbc:DocumentTypeCode>CMR</cbc:DocumentTypeCode>
+               </cac:DocumentReference>
+            </cac:Consignment>
+            <cac:GoodsItem>
+               <cbc:ID>OLL-DANIEL-WEG 5 18069 ROSTOCK</cbc:ID>
+               <cbc:Description>CHEMICALS HARMLESS</cbc:Description>
+               <cbc:ValueAmount currencyID="EUR">0.00</cbc:ValueAmount>
+               <cbc:GrossWeightMeasure unitCode="KGM">3120.000</cbc:GrossWeightMeasure>
+               <cbc:NetWeightMeasure unitCode="KGM">0.000</cbc:NetWeightMeasure>
+               <cbc:GrossVolumeMeasure unitCode="MTR">2.400</cbc:GrossVolumeMeasure>
+               <cbc:Quantity unitCode="P5">4.000</cbc:Quantity>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>loadingMeters</cbc:AttributeID>
+                  <cbc:Measure unitCode="MTR">2.400</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:ContainingPackage>
+                  <cbc:ID schemeID="shippingUnit">310000000126594674</cbc:ID>
+                  <cbc:Quantity unitCode="P5">1.000</cbc:Quantity>
+               </cac:ContainingPackage>
+               <cac:ContainingPackage>
+                  <cbc:ID schemeID="shippingUnit">310000000126594681</cbc:ID>
+                  <cbc:Quantity unitCode="P5">1.000</cbc:Quantity>
+               </cac:ContainingPackage>
+               <cac:ContainingPackage>
+                  <cbc:ID schemeID="shippingUnit">310000000126594698</cbc:ID>
+                  <cbc:Quantity unitCode="P5">1.000</cbc:Quantity>
+               </cac:ContainingPackage>
+               <cac:ContainingPackage>
+                  <cbc:ID schemeID="shippingUnit">310000000126594704</cbc:ID>
+                  <cbc:Quantity unitCode="P5">1.000</cbc:Quantity>
+               </cac:ContainingPackage>
+            </cac:GoodsItem>
+            <cac:ShipmentStage>
+               <cbc:ShipmentStageType>trip</cbc:ShipmentStageType>
+               <cbc:TransportModeCode>30</cbc:TransportModeCode>
+               <cbc:TransportMeansTypeCode>0</cbc:TransportMeansTypeCode>
+               <cac:TransportMeans>
+                  <cac:RoadTransport>
+                     <cbc:LicensePlateID>0</cbc:LicensePlateID>
+                  </cac:RoadTransport>
+               </cac:TransportMeans>
+               <cac:LoadingTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-10</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+               </cac:LoadingTransportEvent>
+               <cac:DeliveryTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-13</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+               </cac:DeliveryTransportEvent>
+               <cac:EstimatedDepartureTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-10</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>08:00:00+01:00</cbc:OccurrenceTime>
+               </cac:EstimatedDepartureTransportEvent>
+               <cac:EstimatedArrivalTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-13</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>14:00:00+01:00</cbc:OccurrenceTime>
+               </cac:EstimatedArrivalTransportEvent>
+            </cac:ShipmentStage>
+            <cac:ShipmentStage>
+               <cbc:ShipmentStageType>trip</cbc:ShipmentStageType>
+               <cbc:TransportModeCode>30</cbc:TransportModeCode>
+               <cbc:TransportMeansTypeCode>0</cbc:TransportMeansTypeCode>
+               <cac:TransportMeans>
+                  <cac:RoadTransport>
+                     <cbc:LicensePlateID>0</cbc:LicensePlateID>
+                  </cac:RoadTransport>
+               </cac:TransportMeans>
+               <cac:LoadingTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-10</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+               </cac:LoadingTransportEvent>
+               <cac:DeliveryTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-13</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+               </cac:DeliveryTransportEvent>
+               <cac:EstimatedDepartureTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-10</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>08:00:00+01:00</cbc:OccurrenceTime>
+               </cac:EstimatedDepartureTransportEvent>
+               <cac:EstimatedArrivalTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-13</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>14:00:00+01:00</cbc:OccurrenceTime>
+               </cac:EstimatedArrivalTransportEvent>
+            </cac:ShipmentStage>
+            <cac:ShipmentStage>
+               <cbc:ID>0000010214737810000100001</cbc:ID>
+               <cbc:ShipmentStageType>planning</cbc:ShipmentStageType>
+               <cbc:TransportMeansTypeCode>1</cbc:TransportMeansTypeCode>
+               <cac:TransportEvent>
+                  <cbc:OccurrenceDate>2025-02-10</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+                  <cbc:Description>from</cbc:Description>
+                  <cac:ReportedShipment>
+                     <cac:Consignment>
+                        <cbc:ID>1</cbc:ID>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126594674</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126594681</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126594698</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126594704</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                     </cac:Consignment>
+                  </cac:ReportedShipment>
+                  <cac:Location>
+                     <cbc:ID>Z-NL</cbc:ID>
+                     <cbc:Name>Oliehandel Klaas de Boer</cbc:Name>
+                     <cac:Address>
+                        <cbc:CityName>IJmuiden</cbc:CityName>
+                        <cbc:PostalZone>1976 CB</cbc:PostalZone>
+                        <cac:AddressLine>
+                           <cbc:Line>Trawlerkade 58</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                           <cbc:IdentificationCode>NL</cbc:IdentificationCode>
+                        </cac:Country>
+                     </cac:Address>
+                  </cac:Location>
+               </cac:TransportEvent>
+            </cac:ShipmentStage>
+            <cac:ShipmentStage>
+               <cbc:ID>0000010214737810000100002</cbc:ID>
+               <cbc:ShipmentStageType>planning</cbc:ShipmentStageType>
+               <cbc:TransportMeansTypeCode>4</cbc:TransportMeansTypeCode>
+               <cac:TransportEvent>
+                  <cbc:OccurrenceDate>2025-02-13</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+                  <cbc:Description>to</cbc:Description>
+                  <cac:ReportedShipment>
+                     <cac:Consignment>
+                        <cbc:ID>1</cbc:ID>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126594674</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126594681</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126594698</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126594704</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                     </cac:Consignment>
+                  </cac:ReportedShipment>
+                  <cac:Location>
+                     <cbc:ID>Z-DE</cbc:ID>
+                     <cbc:Name>Singer Oil&amp;Technik GmbH</cbc:Name>
+                     <cac:Address>
+                        <cbc:CityName>Rostock</cbc:CityName>
+                        <cbc:PostalZone>18069</cbc:PostalZone>
+                        <cac:AddressLine>
+                           <cbc:Line>Oll-Daniel Weg 5</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                           <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+                        </cac:Country>
+                     </cac:Address>
+                  </cac:Location>
+               </cac:TransportEvent>
+            </cac:ShipmentStage>
+         </cac:ConsolidatedShipment>
+         <cac:RequestedPickupTransportEvent>
+            <cbc:OccurrenceDate>2025-02-10</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+         </cac:RequestedPickupTransportEvent>
+         <cac:RequestedDeliveryTransportEvent>
+            <cbc:OccurrenceDate>2025-02-13</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+         </cac:RequestedDeliveryTransportEvent>
+         <cac:CarrierParty>
+            <cac:PartyName>
+               <cbc:Name>Interlogic B.V.</cbc:Name>
+            </cac:PartyName>
+            <cac:PhysicalLocation>
+               <cac:Address>
+                  <cbc:CityName>Coevorden</cbc:CityName>
+                  <cbc:PostalZone>7742PT</cbc:PostalZone>
+                  <cac:AddressLine>
+                     <cbc:Line>De Mars 9</cbc:Line>
+                  </cac:AddressLine>
+                  <cac:Country>
+                     <cbc:IdentificationCode>NL</cbc:IdentificationCode>
+                  </cac:Country>
+               </cac:Address>
+               <cac:LocationCoordinate>
+                  <cbc:LatitudeDegreesMeasure unitCode="dd">6.7313600000169</cbc:LatitudeDegreesMeasure>
+                  <cbc:LongitudeDegreesMeasure unitCode="dd">52.649200000112</cbc:LongitudeDegreesMeasure>
+               </cac:LocationCoordinate>
+            </cac:PhysicalLocation>
+         </cac:CarrierParty>
+         <cac:OriginalDespatchTransportationService>
+            <cbc:TransportServiceCode>Default</cbc:TransportServiceCode>
+            <cac:TransportEquipment>
+               <cbc:TransportEquipmentTypeCode>2</cbc:TransportEquipmentTypeCode>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>quantity</cbc:AttributeID>
+                  <cbc:Measure unitCode="P5">4.000</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>grossWeight</cbc:AttributeID>
+                  <cbc:Measure unitCode="">3120.000</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>netWeight</cbc:AttributeID>
+                  <cbc:Measure unitCode="">0.000</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>chargeableWeight</cbc:AttributeID>
+                  <cbc:Measure unitCode="">4200.000</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>volume</cbc:AttributeID>
+                  <cbc:Measure unitCode="C">12.727</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>cubicMeters</cbc:AttributeID>
+                  <cbc:Measure unitCode="">0.000</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>loadingMeters</cbc:AttributeID>
+                  <cbc:Measure unitCode="">2.400</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>goodsValue</cbc:AttributeID>
+                  <cbc:Measure unitCode="">0.00</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>loadIndex</cbc:AttributeID>
+                  <cbc:Measure unitCode="">0.000</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:OperatingParty>
+                  <cac:PartyIdentification>
+                     <cbc:ID schemeID="codriver">0</cbc:ID>
+                  </cac:PartyIdentification>
+                  <cac:PartyIdentification>
+                     <cbc:ID schemeID="codriver">0</cbc:ID>
+                  </cac:PartyIdentification>
+               </cac:OperatingParty>
+            </cac:TransportEquipment>
+            <cac:ShipmentStage>
+               <cac:LoadingPortLocation>
+                  <cbc:ID>Z-NL</cbc:ID>
+               </cac:LoadingPortLocation>
+               <cac:UnloadingPortLocation>
+                  <cbc:ID>Z-DE</cbc:ID>
+               </cac:UnloadingPortLocation>
+            </cac:ShipmentStage>
+         </cac:OriginalDespatchTransportationService>
+      </cac:Consignment>
+      <cac:ShipmentStage>
+         <cbc:ShipmentStageType>trip</cbc:ShipmentStageType>
+         <cbc:TransportModeCode>30</cbc:TransportModeCode>
+         <cbc:TransportMeansTypeCode>0</cbc:TransportMeansTypeCode>
+         <cac:TransportMeans>
+            <cac:RoadTransport>
+               <cbc:LicensePlateID>0</cbc:LicensePlateID>
+            </cac:RoadTransport>
+         </cac:TransportMeans>
+         <cac:LoadingTransportEvent>
+            <cbc:OccurrenceDate>2025-02-10</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+         </cac:LoadingTransportEvent>
+         <cac:DeliveryTransportEvent>
+            <cbc:OccurrenceDate>2025-02-13</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+         </cac:DeliveryTransportEvent>
+         <cac:EstimatedDepartureTransportEvent>
+            <cbc:OccurrenceDate>2025-02-10</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>08:00:00+01:00</cbc:OccurrenceTime>
+         </cac:EstimatedDepartureTransportEvent>
+         <cac:EstimatedArrivalTransportEvent>
+            <cbc:OccurrenceDate>2025-02-13</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>14:00:00+01:00</cbc:OccurrenceTime>
+         </cac:EstimatedArrivalTransportEvent>
+      </cac:ShipmentStage>
+      <cac:ShipmentStage>
+         <cbc:ShipmentStageType>trip</cbc:ShipmentStageType>
+         <cbc:TransportModeCode>30</cbc:TransportModeCode>
+         <cbc:TransportMeansTypeCode>0</cbc:TransportMeansTypeCode>
+         <cac:TransportMeans>
+            <cac:RoadTransport>
+               <cbc:LicensePlateID>0</cbc:LicensePlateID>
+            </cac:RoadTransport>
+         </cac:TransportMeans>
+         <cac:LoadingTransportEvent>
+            <cbc:OccurrenceDate>2025-02-10</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+         </cac:LoadingTransportEvent>
+         <cac:DeliveryTransportEvent>
+            <cbc:OccurrenceDate>2025-02-13</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+         </cac:DeliveryTransportEvent>
+         <cac:EstimatedDepartureTransportEvent>
+            <cbc:OccurrenceDate>2025-02-10</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>08:00:00+01:00</cbc:OccurrenceTime>
+         </cac:EstimatedDepartureTransportEvent>
+         <cac:EstimatedArrivalTransportEvent>
+            <cbc:OccurrenceDate>2025-02-13</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>14:00:00+01:00</cbc:OccurrenceTime>
+         </cac:EstimatedArrivalTransportEvent>
+      </cac:ShipmentStage>
+      <cac:FreightAllowanceCharge>
+         <cbc:ID schemeID="freightCharge">1</cbc:ID>
+         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+         <cbc:AllowanceChargeReasonCode>218</cbc:AllowanceChargeReasonCode>
+         <cbc:Amount currencyID="EUR">473.00</cbc:Amount>
+      </cac:FreightAllowanceCharge>
+      <cac:FreightAllowanceCharge>
+         <cbc:ID schemeID="freightCharge">2</cbc:ID>
+         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+         <cbc:AllowanceChargeReasonCode>224</cbc:AllowanceChargeReasonCode>
+         <cbc:Amount currencyID="EUR">29.78</cbc:Amount>
+      </cac:FreightAllowanceCharge>
+   </cac:Shipment>
+   <cac:DocumentReference>
+      <cbc:ID schemeID="messageReferenceNumber">Tm000321941</cbc:ID>
+   </cac:DocumentReference>
+   <cac:DocumentDistribution>
+      <cbc:ID>INTEROLD</cbc:ID>
+      <cbc:DistributionTypeCode>Receiver</cbc:DistributionTypeCode>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeID="ERP:ID">INTEROLD</cbc:ID>
+         </cac:PartyIdentification>
+      </cac:Party>
+   </cac:DocumentDistribution>
+</Manifest>

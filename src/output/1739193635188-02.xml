@@ -1,0 +1,43 @@
+<transportbookings>
+  <transportbooking>
+    <edireference>1021473781</edireference>
+    <reference>1802269812 ED 18 ROSTOCK 3781</reference>
+    <customer_id matchmode="1">NEELEVAT</customer_id>
+    <shipments>
+      <shipment>
+        <edireference>1021473781</edireference>
+        <reference>1802269812 ED 18 ROSTOCK 3781</reference>
+        <pickupaddress>
+          <reference>4 PALLETS-ROSTOCH</reference>
+          <address_id matchmode="1">Oliehandel Klaas de Boer</address_id>
+          <name>Oliehandel Klaas de Boer</name>
+          <date>2025-02-10</date>
+          <time>08:00:00</time>
+          <address1>Trawlerkade 58</address1>
+          <zipcode>1976 CB</zipcode>
+          <city_id matchmode="4">IJmuiden</city_id>
+          <country_id matchmode="4">NL</country_id>
+        </pickupaddress>
+        <deliveryaddress>
+          <reference>CMR</reference>
+          <address_id matchmode="1">Singer Oil&amp;Technik GmbH</address_id>
+          <name>Singer Oil&amp;Technik GmbH</name>
+          <date>2025-02-13</date>
+          <time>14:00:00</time>
+          <address1>Oll-Daniel Weg 5</address1>
+          <zipcode>18069</zipcode>
+          <city_id matchmode="4">Rostock</city_id>
+          <country_id matchmode="4">DE</country_id>
+        </deliveryaddress>
+        <cargo>
+          <unit_id matchmode="1">COL</unit_id>
+          <weight>3120</weight>
+          <loadingmeter>2.4</loadingmeter>
+        </cargo>
+        <cod>
+          <amount>502.78</amount>
+        </cod>
+      </shipment>
+    </shipments>
+  </transportbooking>
+</transportbookings>

@@ -8,7 +8,7 @@
         <edireference>1021472623</edireference>
         <reference>1802269116 ED 10 berlijn</reference>
         <pickupaddress>
-          <reference>1802269116/1021472623</reference>
+          <reference>136039526</reference>
           <address_id matchmode="1">Neele-Vat WH (Seattleweg)</address_id>
           <name>Neele-Vat WH (Seattleweg)</name>
           <date>2025-02-03</date>
@@ -19,7 +19,7 @@
           <country_id matchmode="4">NL</country_id>
         </pickupaddress>
         <deliveryaddress>
-          <reference>1802269116/1021472623</reference>
+          <reference>2014320379</reference>
           <address_id matchmode="1">BEIERSDORF MANUFACT. BERLIN GMBH</address_id>
           <name>BEIERSDORF MANUFACT. BERLIN GMBH</name>
           <date>2025-02-05</date>
