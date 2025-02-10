@@ -16,25 +16,29 @@ const readInputFiles = () => {
       return;
     }
     // Filter XML files
-    const xmlFiles = files.filter(
-      (file) => path.extname(file).toLowerCase() === ".xml"
-    );
-    // Read XML files
-    xmlFiles.forEach(async (file) => {
-      const filePath = path.join(inputDirectory, file);
-      try {
-        // XML parser
-        const parser = new XMLParser({
-          ignoreAttributes: false,
-        });
-        // Read input file & parse
-        const inputFile = await fs.promises.readFile(filePath, "utf8");
-        let inputObject = parser.parse(inputFile);
-        generateOutputFile(inputObject, file);
-      } catch (error) {
-        console.error(`❌ Error processing file: ${file}: `, error);
-      }
-    });
+    if (files.length > 0) {
+      const xmlFiles = files.filter(
+        (file) => path.extname(file).toLowerCase() === ".xml"
+      );
+      // Read XML files
+      xmlFiles.forEach(async (file) => {
+        const filePath = path.join(inputDirectory, file);
+        try {
+          // XML parser
+          const parser = new XMLParser({
+            ignoreAttributes: false,
+          });
+          // Read input file & parse
+          const inputFile = await fs.promises.readFile(filePath, "utf8");
+          let inputObject = parser.parse(inputFile);
+          generateOutputFile(inputObject, file);
+        } catch (error) {
+          console.error(`❌ Error processing file: ${file}: `, error);
+        }
+      });
+    } else {
+      console.log("❌ No XML files found in input directory");
+    }
   });
 };
 
