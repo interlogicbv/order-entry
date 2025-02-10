@@ -47,8 +47,8 @@ const path = __importStar(require("path"));
 const fast_xml_parser_1 = require("fast-xml-parser");
 // Todo: XSD validating
 // Default directories
-const inputDirectory = "/src/input";
-const outputDirectory = "/src/output";
+const inputDirectory = "./src/input";
+const outputDirectory = "./src/output";
 const readInputFiles = () => {
     fs.readdir(inputDirectory, (error, files) => {
         // Error handling

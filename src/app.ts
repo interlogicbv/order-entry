@@ -5,8 +5,8 @@ import { XMLParser, XMLBuilder } from "fast-xml-parser";
 // Todo: XSD validating
 
 // Default directories
-const inputDirectory = "/src/input";
-const outputDirectory = "/src/output";
+const inputDirectory = "./src/input";
+const outputDirectory = "./src/output";
 
 const readInputFiles = () => {
   fs.readdir(inputDirectory, (error, files) => {
@@ -214,7 +214,7 @@ const generateOutputFile = (inputObject: any, file: string) => {
     console.log(`✅ Successfully generated: ${ref}-${file}`);
     data = [];
     events = [];
-    fs.unlinkSync(`/src/input/${file}`);
+    fs.unlinkSync(`./src/input/${file}`);
   } catch (error) {
     console.error(`❌ Error generating output file: ${file}: `, error);
   }
