@@ -210,6 +210,7 @@ const generateOutputFile = (inputObject: any, file: string) => {
     console.log(`✅ Successfully generated: ${ref}-${file}`);
     data = [];
     events = [];
+    fs.unlinkSync(`./src/input/${file}`);
   } catch (error) {
     console.error(`❌ Error generating output file: ${file}: `, error);
   }
