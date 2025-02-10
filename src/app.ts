@@ -96,7 +96,7 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                   "cbc:DocumentTypeCode"
                 ],
                 address_id: {
-                  $matchmode: "1",
+                  $matchmode: "11",
                   "#text": data.find(
                     (d: any) => d["cbc:Description"] === "from"
                   )["cac:Location"]["cbc:Name"],
@@ -123,7 +123,7 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                   )["cac:Location"]["cac:Address"]["cbc:CityName"],
                 },
                 country_id: {
-                  $matchmode: "4",
+                  $matchmode: "2",
                   "#text": data.find(
                     (d: any) => d["cbc:Description"] === "from"
                   )["cac:Location"]["cac:Address"]["cac:Country"][
@@ -140,7 +140,7 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                   "cbc:DocumentTypeCode"
                 ],
                 address_id: {
-                  $matchmode: "1",
+                  $matchmode: "11",
                   "#text": data.find((d: any) => d["cbc:Description"] === "to")[
                     "cac:Location"
                   ]["cbc:Name"],
@@ -167,7 +167,7 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                   ]["cac:Address"]["cbc:CityName"],
                 },
                 country_id: {
-                  $matchmode: "4",
+                  $matchmode: "2",
                   "#text": data.find((d: any) => d["cbc:Description"] === "to")[
                     "cac:Location"
                   ]["cac:Address"]["cac:Country"]["cbc:IdentificationCode"],

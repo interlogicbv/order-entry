@@ -118,7 +118,7 @@ const generateOutputFile = (inputObject, file, index) => {
                             pickupaddress: {
                                 reference: inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cac:DocumentReference"].find((d) => d["cbc:ID"]["#text"] === 101)["cbc:DocumentTypeCode"],
                                 address_id: {
-                                    $matchmode: "1",
+                                    $matchmode: "11",
                                     "#text": data.find((d) => d["cbc:Description"] === "from")["cac:Location"]["cbc:Name"],
                                 },
                                 name: data.find((d) => d["cbc:Description"] === "from")["cac:Location"]["cbc:Name"],
@@ -131,14 +131,14 @@ const generateOutputFile = (inputObject, file, index) => {
                                     "#text": data.find((d) => d["cbc:Description"] === "from")["cac:Location"]["cac:Address"]["cbc:CityName"],
                                 },
                                 country_id: {
-                                    $matchmode: "4",
+                                    $matchmode: "2",
                                     "#text": data.find((d) => d["cbc:Description"] === "from")["cac:Location"]["cac:Address"]["cac:Country"]["cbc:IdentificationCode"],
                                 },
                             },
                             deliveryaddress: {
                                 reference: inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cac:DocumentReference"].find((d) => d["cbc:ID"]["#text"] === 103)["cbc:DocumentTypeCode"],
                                 address_id: {
-                                    $matchmode: "1",
+                                    $matchmode: "11",
                                     "#text": data.find((d) => d["cbc:Description"] === "to")["cac:Location"]["cbc:Name"],
                                 },
                                 name: data.find((d) => d["cbc:Description"] === "to")["cac:Location"]["cbc:Name"],
@@ -151,7 +151,7 @@ const generateOutputFile = (inputObject, file, index) => {
                                     "#text": data.find((d) => d["cbc:Description"] === "to")["cac:Location"]["cac:Address"]["cbc:CityName"],
                                 },
                                 country_id: {
-                                    $matchmode: "4",
+                                    $matchmode: "2",
                                     "#text": data.find((d) => d["cbc:Description"] === "to")["cac:Location"]["cac:Address"]["cac:Country"]["cbc:IdentificationCode"],
                                 },
                             },
