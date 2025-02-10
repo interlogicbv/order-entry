@@ -60,7 +60,7 @@ const readInputFiles = () => {
         if (files.length > 0) {
             const xmlFiles = files.filter((file) => path.extname(file).toLowerCase() === ".xml");
             // Read XML files
-            xmlFiles.forEach((file) => __awaiter(void 0, void 0, void 0, function* () {
+            xmlFiles.forEach((file, index) => __awaiter(void 0, void 0, void 0, function* () {
                 const filePath = path.join(inputDirectory, file);
                 try {
                     // XML parser
@@ -70,7 +70,7 @@ const readInputFiles = () => {
                     // Read input file & parse
                     const inputFile = yield fs.promises.readFile(filePath, "utf8");
                     let inputObject = parser.parse(inputFile);
-                    generateOutputFile(inputObject, file);
+                    generateOutputFile(inputObject, file, index);
                 }
                 catch (error) {
                     console.error(`❌ Error processing file: ${file}: `, error);
@@ -82,7 +82,7 @@ const readInputFiles = () => {
         }
     });
 };
-const generateOutputFile = (inputObject, file) => {
+const generateOutputFile = (inputObject, file, index) => {
     try {
         // XML builder
         const builder = new fast_xml_parser_1.XMLBuilder({
@@ -174,15 +174,15 @@ const generateOutputFile = (inputObject, file) => {
         });
         // Generate output file
         const ref = new Date().getTime();
-        const outputPath = path.resolve(`${outputDirectory}/${ref}-${file}`);
+        const outputPath = path.resolve(`${outputDirectory}/${ref}-${index}.xml`);
         fs.writeFileSync(outputPath, outputContent);
-        console.log(`✅ Successfully generated: ${ref}-${file}`);
+        console.log(`✅ Successfully generated: ${ref}-${index}.xml`);
         data = [];
         events = [];
         fs.unlinkSync(`./src/input/${file}`);
     }
     catch (error) {
-        console.error(`❌ Error generating output file: ${file}: `, error);
+        console.error(`❌ Error generating output from: ${file}: `, error);
     }
 };
 readInputFiles();

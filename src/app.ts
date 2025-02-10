@@ -21,7 +21,7 @@ const readInputFiles = () => {
         (file) => path.extname(file).toLowerCase() === ".xml"
       );
       // Read XML files
-      xmlFiles.forEach(async (file) => {
+      xmlFiles.forEach(async (file, index) => {
         const filePath = path.join(inputDirectory, file);
         try {
           // XML parser
@@ -31,7 +31,7 @@ const readInputFiles = () => {
           // Read input file & parse
           const inputFile = await fs.promises.readFile(filePath, "utf8");
           let inputObject = parser.parse(inputFile);
-          generateOutputFile(inputObject, file);
+          generateOutputFile(inputObject, file, index);
         } catch (error) {
           console.error(`❌ Error processing file: ${file}: `, error);
         }
@@ -42,7 +42,7 @@ const readInputFiles = () => {
   });
 };
 
-const generateOutputFile = (inputObject: any, file: string) => {
+const generateOutputFile = (inputObject: any, file: string, index: number) => {
   try {
     // XML builder
     const builder = new XMLBuilder({
@@ -209,14 +209,14 @@ const generateOutputFile = (inputObject: any, file: string) => {
     });
     // Generate output file
     const ref = new Date().getTime();
-    const outputPath = path.resolve(`${outputDirectory}/${ref}-${file}`);
+    const outputPath = path.resolve(`${outputDirectory}/${ref}-${index}.xml`);
     fs.writeFileSync(outputPath, outputContent);
-    console.log(`✅ Successfully generated: ${ref}-${file}`);
+    console.log(`✅ Successfully generated: ${ref}-${index}.xml`);
     data = [];
     events = [];
     fs.unlinkSync(`./src/input/${file}`);
   } catch (error) {
-    console.error(`❌ Error generating output file: ${file}: `, error);
+    console.error(`❌ Error generating output from: ${file}: `, error);
   }
 };
 
