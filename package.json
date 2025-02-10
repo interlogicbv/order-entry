@@ -1,0 +1,29 @@
+{
+  "name": "order-entry",
+  "version": "0.0.1",
+  "description": "",
+  "homepage": "https://github.com/interlogicbv/order-entry#readme",
+  "bugs": {
+    "url": "https://github.com/interlogicbv/order-entry/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interlogicbv/order-entry.git"
+  },
+  "license": "MIT",
+  "author": "R. van Rees",
+  "type": "commonjs",
+  "main": "/dist/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node ./dist/app.js",
+    "dev": "nodemon src/app.ts"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.5.1"
+  }
+}

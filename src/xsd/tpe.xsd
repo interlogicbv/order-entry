@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="transportbooking">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="edireference" type="edireferenceType" minOccurs="0"/>
+        <xs:element name="customer_id" type="customer_idType" minOccurs="1"/>
+        <xs:element name="customername" type="customernameType" minOccurs="0"/>
+        <xs:element name="contactperson_id" type="contactperson_idType" minOccurs="0"/>
+        <xs:element name="reference" type="referenceType" minOccurs="0"/>
+        <xs:element name="remarks" type="remarksType" minOccurs="0"/>
+        <xs:element name="cancellation" type="boolean-or-empty" minOccurs="0"/>
+        <xs:element name="cancellationreason" type="cancellationreasonType" minOccurs="0"/>
+        <xs:element name="shipments" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="shipment" type="shipmentType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="documents" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="document" type="documentType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="shipmentType">
+    <xs:all>
+      <xs:element name="edireference" type="edireferenceType" minOccurs="1"/>
+      <xs:element name="reference" type="referenceType" minOccurs="0"/>
+      <xs:element name="contactperson_id" type="contactperson_idType" minOccurs="0"/>
+      <xs:element name="shipmentkind_id" type="shipmentkind_idType" minOccurs="0"/>
+      <xs:element name="plangroup_id" type="plangroup_idType" minOccurs="0"/>
+      <xs:element name="plangrouptype_id" type="plangrouptype_idType" minOccurs="0"/>
+      <xs:element name="sender" type="senderReceiverType" minOccurs="0"/>
+      <xs:element name="receiver" type="senderReceiverType" minOccurs="0"/>
+      <xs:element name="pickupaddress" type="addressType" minOccurs="0"/>
+      <xs:element name="deliveryaddress" type="addressType" minOccurs="0"/>
+      <xs:element name="cod" type="codType" minOccurs="0"/>
+      <xs:element name="cancellation" type="boolean-or-empty" minOccurs="0"/>
+      <xs:element name="cancellationreason" type="cancellationreasonType" minOccurs="0"/>
+      <xs:element name="printcmr" type="boolean-or-empty" minOccurs="0"/>
+      <xs:element name="cargo" minOccurs="1">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="unitamount" type="decimal-or-empty" minOccurs="0"/>
+            <xs:element name="unit_id" type="unit_idType" minOccurs="0"/>
+            <xs:element name="article_id" type="article_idType" minOccurs="0"/>
+            <xs:element name="articlenumber" type="articlenumberType" minOccurs="0"/>
+            <xs:element name="product_id" type="product_idType" minOccurs="0"/>
+            <xs:element name="productdescription" type="productdescriptionType" minOccurs="0"/>
+            <xs:element name="commoditycode" type="commoditycodeType" minOccurs="0"/>
+            <xs:element name="adrclass_id" type="adrclass_idType" minOccurs="0"/>
+            <xs:element name="hazardousmaterial_id" type="hazardousmaterial_idType" minOccurs="0"/>
+            <xs:element name="weight" type="decimal-or-empty" minOccurs="0"/>
+            <xs:element name="netweight" type="decimal-or-empty" minOccurs="0"/>
+            <xs:element name="loadingmeter" type="decimal-or-empty" minOccurs="0"/>
+            <xs:element name="volume" type="decimal-or-empty" minOccurs="0"/>
+            <xs:element name="palletplaces" type="decimal-or-empty" minOccurs="0"/>
+            <xs:element name="containers" type="decimal-or-empty" minOccurs="0"/>
+            <xs:element name="shelves" type="unsignedShort-or-empty" minOccurs="0"/>
+            <xs:element name="extensions" type="unsignedShort-or-empty" minOccurs="0"/>
+            <xs:element name="colli" type="decimal-or-empty" minOccurs="0"/>
+            <xs:element name="packageunit_id" type="unit_idType" minOccurs="0"/>
+            <xs:element name="length" type="decimal-or-empty" minOccurs="0"/>
+            <xs:element name="width" type="decimal-or-empty" minOccurs="0"/>
+            <xs:element name="height" type="decimal-or-empty" minOccurs="0"/>
+            <xs:element name="mintemperature" type="unsignedShort-or-empty" minOccurs="0"/>
+            <xs:element name="maxtemperature" type="unsignedShort-or-empty" minOccurs="0"/>
+            <xs:element name="temperaturesetpoint" type="unsignedShort-or-empty" minOccurs="0"/>
+            <xs:element name="cargovalue" type="decimal-or-empty" minOccurs="0"/>
+            <xs:element name="valuecurrency_id" type="currency_idType" minOccurs="0"/>
+            <xs:element name="importdutypercentage" type="decimal-or-empty" minOccurs="0"/>
+            <xs:element name="importvatpercentage" type="decimal-or-empty" minOccurs="0"/>
+            <xs:element name="customsdocumenttype_id" type="documenttype_idType" minOccurs="0"/>
+            <xs:element name="customsdocumentnumber" type="customsdocumentnumberType" minOccurs="0"/>
+            <xs:element name="countryoforigin_id" type="country_idType" minOccurs="0"/>
+            <xs:element name="documentnumbers" type="documentnumbersType" minOccurs="0"/>
+            <xs:element name="externalcustomerid" type="externalcustomeridType" minOccurs="0"/>
+            <xs:element name="externalshipmentid" type="externalshipmentidType" minOccurs="0"/>
+            <xs:element name="barcode" type="barcodeType" minOccurs="0"/>
+            <xs:element name="cmrnumber" type="cmrnumberType" minOccurs="0"/>
+            <xs:element name="incoterm_id" type="incoterm_idType" minOccurs="0"/>
+            <xs:element name="gmpcode" type="unsignedInt-or-empty" minOccurs="0"/>
+            <xs:element name="gmpclass_id" type="gmpclass_idType" minOccurs="0"/>
+            <xs:element name="hazardousmaterial" type="hazardousmaterialType" minOccurs="0"/>
+            <xs:element name="capabilities" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="item" type="capabilityItemType" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dangerousgoods" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="item" type="dangerousgoodsItemType" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="goodslines" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="goodsline" type="goodslineType" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="references" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="reference" type="referenceItemType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="parties" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="party" type="partyType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="documents" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="document" type="documentType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="customstransits" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="customstransit" type="customstransitType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="partyType">
+    <xs:all>
+      <xs:element name="partytype_id" type="partytype_idType" minOccurs="0"/>
+      <xs:element name="no" type="partyNoType" minOccurs="0"/>
+      <xs:element name="address_id" type="address_idType" minOccurs="0"/>
+      <xs:element name="name" type="nameType" minOccurs="0"/>
+      <xs:element name="address1" type="address1Type" minOccurs="0"/>
+      <xs:element name="address2" type="address2Type" minOccurs="0"/>
+      <xs:element name="zipcode" type="zipcodeType" minOccurs="0"/>
+      <xs:element name="country_id" type="country_idType" minOccurs="0"/>
+      <xs:element name="cityname" type="citynameType" minOccurs="0"/>
+      <xs:element name="contact" type="contactType" minOccurs="0"/>
+      <xs:element name="phone" type="phoneType" minOccurs="0"/>
+      <xs:element name="mobile" type="mobileType" minOccurs="0"/>
+      <xs:element name="fax" type="faxType" minOccurs="0"/>
+      <xs:element name="email" type="emailType" minOccurs="0"/>
+      <xs:element name="language_id" type="language_idType" minOccurs="0"/>
+      <xs:element name="vatnumber" type="vatnumberType" minOccurs="0"/>
+      <xs:element name="cocnr" type="cocnrType" minOccurs="0"/>
+      <xs:element name="eori" type="eoriType" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="documentType">
+    <xs:all>
+      <xs:element name="documenttype_id" type="documenttype_idType" minOccurs="0"/>
+      <xs:element name="filename" type="filenameType" minOccurs="0"/>
+      <xs:element name="filedata" type="xs:base64Binary" minOccurs="0"/>
+      <xs:element name="reference" type="referenceType" minOccurs="0"/>
+      <xs:element name="edireference" type="edireferenceType" minOccurs="0"/>
+      <xs:element name="concerns" type="concernsType" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="senderReceiverType">
+    <xs:all>
+      <xs:element name="address_id" type="address_idType" minOccurs="0"/>
+      <xs:element name="name" type="nameType" minOccurs="0"/>
+      <xs:element name="address1" type="address1Type" minOccurs="0"/>
+      <xs:element name="zipcode" type="zipcodeType" minOccurs="0"/>
+      <xs:element name="city_id" type="city_idType" minOccurs="0"/>
+      <xs:element name="country_id" type="country_idType" minOccurs="0"/>
+      <xs:element name="contact" type="contactType" minOccurs="0"/>
+      <xs:element name="email" type="emailType" minOccurs="0"/>
+      <xs:element name="phone" type="phoneType" minOccurs="0"/>
+      <xs:element name="mobile" type="mobileType" minOccurs="0"/>
+      <xs:element name="fax" type="faxType" minOccurs="0"/>
+      <xs:element name="language_id" type="language_idType" minOccurs="0"/>
+      <xs:element name="vatnumber" type="vatnumberType" minOccurs="0"/>
+      <xs:element name="cocnr" type="cocnrType" minOccurs="0"/>
+      <xs:element name="eori" type="eoriType" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="timewindowType">
+    <xs:all>
+      <xs:element name="weekdayfrom_id" type="weekday_idType" minOccurs="0"/>
+      <xs:element name="weekdaytill_id" type="weekday_idType" minOccurs="0"/>
+      <xs:element name="timefrom" type="time-or-empty" minOccurs="0"/>
+      <xs:element name="timetill" type="time-or-empty" minOccurs="0"/>
+      <xs:element name="closed" type="boolean-or-empty" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="addressType">
+    <xs:all>
+      <xs:element name="reference" type="referenceType" minOccurs="0"/>
+      <xs:element name="date" type="date-or-empty" minOccurs="0"/>
+      <xs:element name="time" type="time-or-empty" minOccurs="0"/>
+      <xs:element name="datetill" type="date-or-empty" minOccurs="0"/>
+      <xs:element name="timetill" type="time-or-empty" minOccurs="0"/>
+      <xs:element name="fixeddate" type="boolean-or-empty" minOccurs="0"/>
+      <xs:element name="address_id" type="address_idType" minOccurs="0"/>
+      <xs:element name="name" type="nameType" minOccurs="0"/>
+      <xs:element name="address1" type="address1Type" minOccurs="0"/>
+      <xs:element name="address2" type="address2Type" minOccurs="0"/>
+      <xs:element name="zipcode" type="zipcodeType" minOccurs="0"/>
+      <xs:element name="city_id" type="city_idType" minOccurs="0"/>
+      <xs:element name="country_id" type="country_idType" minOccurs="0"/>
+      <xs:element name="contact" type="contactType" minOccurs="0"/>
+      <xs:element name="email" type="emailType" minOccurs="0"/>
+      <xs:element name="phone" type="phoneType" minOccurs="0"/>
+      <xs:element name="mobile" type="mobileType" minOccurs="0"/>
+      <xs:element name="fax" type="faxType" minOccurs="0"/>
+      <xs:element name="language_id" type="language_idType" minOccurs="0"/>
+      <xs:element name="vatnumber" type="vatnumberType" minOccurs="0"/>
+      <xs:element name="cocnr" type="cocnrType" minOccurs="0"/>
+      <xs:element name="eori" type="eoriType" minOccurs="0"/>
+      <xs:element name="driverinfo" type="driverinfoType" minOccurs="0"/>
+      <xs:element name="remarks" type="remarksType" minOccurs="0"/>
+      <xs:element name="latitude" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="longitude" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="neutraladdress_id" type="address_idType" minOccurs="0"/>
+      <xs:element name="preferreddate" type="date-or-empty" minOccurs="0"/>
+      <xs:element name="preferredtime" type="time-or-empty" minOccurs="0"/>
+      <xs:element name="preferreddatetill" type="date-or-empty" minOccurs="0"/>
+      <xs:element name="preferredtimetill" type="time-or-empty" minOccurs="0"/>
+      <xs:element name="duration" type="unsignedInt-or-empty" minOccurs="0"/>
+      <xs:element name="ediproviderdepot_id" type="ediproviderdepot_idType" minOccurs="0"/>
+      <xs:element name="capabilities" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="item" type="capabilityItemType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="timewindows" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="timewindow" type="timewindowType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="capabilityItemType">
+    <xs:all>
+      <xs:element name="capability_id" type="capability_idType" minOccurs="1"/>
+      <xs:element name="capabilitylink" type="capabilitylinkType" minOccurs="1"/>
+      <xs:element name="strict" type="boolean-or-empty" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="codType">
+    <xs:all>
+      <xs:element name="amount" type="decimal-or-empty" minOccurs="1"/>
+      <xs:element name="currency_id" type="currency_idType" minOccurs="0"/>
+      <xs:element name="paymentmethod_id" type="paymentmethod_idType" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="customstransitType">
+    <xs:all>
+      <xs:element name="customsprocedure_id" type="customsprocedure_idType" minOccurs="1"/>
+      <xs:element name="customsstatus_id" type="customsstatus_idType" minOccurs="0"/>
+      <xs:element name="mrn" type="mrnType" minOccurs="0"/>
+      <xs:element name="declarationdate" type="date-or-empty" minOccurs="0"/>
+      <xs:element name="expirydate" type="date-or-empty" minOccurs="0"/>
+      <xs:element name="exportcountry_id" type="country_idType" minOccurs="0"/>
+      <xs:element name="destinationcountry_id" type="country_idType" minOccurs="0"/>
+      <xs:element name="edireference" type="edireferenceType" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="referenceItemType">
+    <xs:all>
+      <xs:element name="referencekind_id" type="referencekind_idType" minOccurs="1"/>
+      <xs:element name="description" type="referenceDescriptionType" minOccurs="1"/>
+      <xs:element name="edireference" type="edireferenceType" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="dangerousgoodsItemType">
+    <xs:all>
+      <xs:element name="edireference" type="edireferenceType" minOccurs="0"/>
+      <xs:element name="number" type="hmNumberType" minOccurs="0"/>
+      <xs:element name="description" type="hmDescriptionType" minOccurs="0"/>
+      <xs:element name="adrclass_id" type="adrclass_idType" minOccurs="0"/>
+      <xs:element name="class" type="hmClassType" minOccurs="0"/>
+      <xs:element name="classificationcode" type="hmClassificationcodeType" minOccurs="0"/>
+      <xs:element name="packagegroup" type="hmPackagegroupType" minOccurs="0"/>
+      <xs:element name="symbols" type="hmSymbolsType" minOccurs="0"/>
+      <xs:element name="labelcodes" type="hmLabelcodesType" minOccurs="0"/>
+      <xs:element name="specialprovisions" type="hmSpecialprovisionsType" minOccurs="0"/>
+      <xs:element name="transportcategory" type="hmTransportcategoryType" minOccurs="0"/>
+      <xs:element name="tunnelcode" type="hmTunnelcodeType" minOccurs="0"/>
+      <xs:element name="unitamount" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="unitdescription" type="hmUnitdescriptionType" minOccurs="0"/>
+      <xs:element name="weight" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="volume" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="limitedquantity" type="boolean-or-empty" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="goodslineType">
+    <xs:all>
+      <xs:element name="edireference" type="edireferenceType" minOccurs="0"/>
+      <xs:element name="unitamount" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="unit_id" type="unit_idType" minOccurs="0"/>
+      <xs:element name="article_id" type="article_idType" minOccurs="0"/>
+      <xs:element name="product_id" type="product_idType" minOccurs="0"/>
+      <xs:element name="productdescription" type="productdescriptionType" minOccurs="0"/>
+      <xs:element name="commoditycode" type="commoditycodeType" minOccurs="0"/>
+      <xs:element name="adrclass_id" type="adrclass_idType" minOccurs="0"/>
+      <xs:element name="adrremarks" type="adrremarksType" minOccurs="0"/>
+      <xs:element name="hazardousmaterial_id" type="hazardousmaterial_idType" minOccurs="0"/>
+      <xs:element name="articlenumber" type="articlenumberType" minOccurs="0"/>
+      <xs:element name="articlegroup" type="articlegroupType" minOccurs="0"/>
+      <xs:element name="weight" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="netweight" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="loadingmeter" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="volume" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="palletplaces" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="containers" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="colli" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="packageunit_id" type="unit_idType" minOccurs="0"/>
+      <xs:element name="length" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="width" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="height" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="mintemperature" type="unsignedShort-or-empty" minOccurs="0"/>
+      <xs:element name="maxtemperature" type="unsignedShort-or-empty" minOccurs="0"/>
+      <xs:element name="temperaturesetpoint" type="unsignedShort-or-empty" minOccurs="0"/>
+      <xs:element name="value" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="valuecurrency_id" type="currency_idType" minOccurs="0"/>
+      <xs:element name="importdutypercentage" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="importvatpercentage" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="customsdocumenttype_id" type="documenttype_idType" minOccurs="0"/>
+      <xs:element name="customsdocumentnumber" type="customsdocumentnumberType" minOccurs="0"/>
+      <xs:element name="countryoforigin_id" type="country_idType" minOccurs="0"/>
+      <xs:element name="reference" type="referenceType" minOccurs="0"/>
+      <xs:element name="reference2" type="referenceType" minOccurs="0"/>
+      <xs:element name="externalcustomerid" type="externalcustomeridType" minOccurs="0"/>
+      <xs:element name="externalshipmentid" type="externalshipmentidType" minOccurs="0"/>
+      <xs:element name="ean" type="eanType" minOccurs="0"/>
+      <xs:element name="barcode" type="barcodeType" minOccurs="0"/>
+      <xs:element name="consolidationbarcode" type="consolidationbarcodeType" minOccurs="0"/>
+      <xs:element name="remarks" type="remarksType" minOccurs="0"/>
+      <xs:element name="gmpcode" type="unsignedInt-or-empty" minOccurs="0"/>
+      <xs:element name="gmpclass_id" type="gmpclass_idType" minOccurs="0"/>
+      <xs:element name="hazardousmaterial" type="hazardousmaterialType" minOccurs="0"/>
+      <xs:element name="dangerousgoods" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="item" type="dangerousgoodsItemType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="references" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="reference" type="referenceItemType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="goodsitems" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="goodsitem" type="goodsitemType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="goodsitemType">
+    <xs:all>
+      <xs:element name="edireference" type="edireferenceType" minOccurs="0"/>
+      <xs:element name="unitamount" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="unit_id" type="unit_idType" minOccurs="0"/>
+      <xs:element name="description" type="descriptionType" minOccurs="0"/>
+      <xs:element name="articlenumber" type="articlenumberType" minOccurs="0"/>
+      <xs:element name="article_id" type="article_idType" minOccurs="0"/>
+      <xs:element name="weight" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="volume" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="length" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="width" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="height" type="decimal-or-empty" minOccurs="0"/>
+      <xs:element name="adrclass_id" type="adrclass_idType" minOccurs="0"/>
+      <xs:element name="adrremarks" type="adrremarksType" minOccurs="0"/>
+      <xs:element name="hazardousmaterial_id" type="hazardousmaterial_idType" minOccurs="0"/>
+      <xs:element name="ean" type="eanType" minOccurs="0"/>
+      <xs:element name="barcode" type="barcodeType" minOccurs="0"/>
+      <xs:element name="consolidationbarcode" type="consolidationbarcodeType" minOccurs="0"/>
+      <xs:element name="remarks" type="remarksType" minOccurs="0"/>
+      <xs:element name="lot" type="lotType" minOccurs="0"/>
+      <xs:element name="type" type="typeType" minOccurs="0"/>
+      <xs:element name="type2" type="typeType" minOccurs="0"/>
+      <xs:element name="type3" type="typeType" minOccurs="0"/>
+      <xs:element name="palletid" type="palletidType" minOccurs="0"/>
+      <xs:element name="expiredate" type="date-or-empty" minOccurs="0"/>
+      <xs:element name="productiondate" type="date-or-empty" minOccurs="0"/>
+      <xs:element name="hazardousmaterial" type="hazardousmaterialType" minOccurs="0"/>
+      <xs:element name="dangerousgoods" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="item" type="dangerousgoodsItemType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:simpleType name="boolean-or-empty">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="0"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:boolean"/>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="decimal-or-empty">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="0"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:decimal"/>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="dateTime-or-empty">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="0"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:dateTime"/>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="date-or-empty">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="0"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:date"/>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="time-or-empty">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="0"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:time"/>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="int-or-empty">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="0"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="unsignedInt-or-empty">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="0"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:unsignedInt"/>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="unsignedShort-or-empty">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="0"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:unsignedShort"/>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="idType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="edireferenceType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="customer_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType">
+        <xs:attribute name="matchmode">
+          <xs:simpleType>
+            <xs:restriction base="xs:unsignedByte">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="9"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="customernameType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="contactperson_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="referenceType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="remarksType">
+    <xs:restriction base="xs:string">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="cancellationreasonType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="currency_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="orderkind_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="notification_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="shipmentkind_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="plangroup_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="plangrouptype_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="unit_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="transportkind_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="product_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="partytype_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType">
+        <xs:attribute name="matchmode">
+          <xs:simpleType>
+            <xs:restriction base="xs:unsignedByte">
+              <xs:enumeration value="0"/>
+              <xs:enumeration value="3"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="partyNoType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="35"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="address_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType">
+        <xs:attribute name="matchmode">
+          <xs:simpleType>
+            <xs:restriction base="xs:unsignedByte">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="5"/>
+              <xs:enumeration value="6"/>
+              <xs:enumeration value="10"/>
+              <xs:enumeration value="11"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="nameType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="address1Type">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="address2Type">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="zipcodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="country_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="city_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="citynameType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="contactType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="phoneType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="25"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mobileType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="25"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="faxType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="25"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="emailType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="language_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="vatnumberType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="cocnrType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="eoriType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ediproviderdepot_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="weekday_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="documenttype_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="filenameType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="concernsType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="500"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="driverinfoType">
+    <xs:restriction base="xs:string">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="capability_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="capabilitylinkType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="available"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="required"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="forbidden"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="paymentmethod_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="referencekind_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="referenceDescriptionType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="article_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="articlenumberType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="articlegroupType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="productdescriptionType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="commoditycodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="adrclass_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="adrremarksType">
+    <xs:restriction base="xs:string">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="hazardousmaterial_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="documentnumbersType">
+    <xs:restriction base="xs:string">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="externalcustomeridType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="externalshipmentidType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="barcodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="consolidationbarcodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="eanType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="cmrnumberType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="incoterm_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="gmpclass_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="internalremarksType">
+    <xs:restriction base="xs:string">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="descriptionType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="lotType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="palletidType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:complexType name="hazardousmaterialType">
+    <xs:all>
+      <xs:element name="code" type="hmNumberType" minOccurs="1"/>
+      <xs:element name="description" type="hmDescriptionType" minOccurs="0"/>
+      <xs:element name="class" type="hmClassType" minOccurs="0"/>
+      <xs:element name="classificationcode" type="hmClassificationcodeType" minOccurs="0"/>
+      <xs:element name="packagegroup" type="hmPackagegroupType" minOccurs="0"/>
+      <xs:element name="symbols" type="hmSymbolsType" minOccurs="0"/>
+      <xs:element name="labelcodes" type="hmLabelcodesType" minOccurs="0"/>
+      <xs:element name="transportcategory" type="hmTransportcategoryType" minOccurs="0"/>
+      <xs:element name="tunnelcode" type="hmTunnelcodeType" minOccurs="0"/>
+      <xs:element name="specialprovisions" type="hmSpecialprovisionsType" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:simpleType name="hmNumberType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hmDescriptionType">
+    <xs:restriction base="xs:string">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hmChemicalnameType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hmClassType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hmClassificationcodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hmPackagegroupType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hmSymbolsType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hmLabelcodesType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hmTransportcategoryType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hmTunnelcodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hmSpecialprovisionsType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hmUnitdescriptionType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="customsprocedure_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="customsstatus_idType">
+    <xs:simpleContent>
+      <xs:extension base="idType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="mrnType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="18"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="customsdocumentnumberType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>
