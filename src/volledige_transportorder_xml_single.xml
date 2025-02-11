@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<transportbookings>
+	<transportbooking>
+		<edireference/>
+		<ediproviderstatus_id matchmode="0"/>
+		<customer_id matchmode="0">33191</customer_id>
+		<contactperson_id matchmode="0">2135</contactperson_id>
+		<reference/>
+		<remarks/>
+		<department_id matchmode="0">9</department_id>
+		<externaldepartment_id matchmode="0"/>
+		<fixedprice/>
+		<currency_id matchmode="0">18</currency_id>
+		<invoicelegs>1</invoicelegs>
+		<tariffgroup_id matchmode="0"/>
+		<orderkind_id matchmode="0"/>
+		<noinvoice/>
+		<notification_id matchmode="0"/>
+		<tag>1DBC9F87-51CA-41CE-9FCD-64C96C47CB23</tag>
+		<extracosts/>
+		<parties/>
+		<documents/>
+		<shipments>
+			<shipment>
+				<edireference/>
+				<reference/>
+				<ediproviderstatus_id matchmode="0"/>
+				<editimestamp/>
+				<edichecksum/>
+				<ediprovideruser_id matchmode="0"/>
+				<template_id matchmode="0" matchscope="0" autocreate="false"/>
+				<contactperson_id matchmode="0"/>
+				<shipmentkind_id matchmode="0"/>
+				<plangroup_id matchmode="0">106</plangroup_id>
+				<plangrouptype_id matchmode="0">1</plangrouptype_id>
+				<allinprice/>
+				<fixedprice/>
+				<unitprice/>
+				<fuelsurchargepercentage>19.78934375</fuelsurchargepercentage>
+				<fuelsurchargekmsprice/>
+				<fuelsurchargeunitprice/>
+				<fuelsurchargefixedprice/>
+				<mautsurchargepercentage/>
+				<mautsurchargekmsprice/>
+				<mautsurchargeunitamount/>
+				<mautsurchargeunit_id matchmode="0"/>
+				<mautsurchargeunitprice/>
+				<mautsurchargefixedprice/>
+				<mautsurchargedistance/>
+				<distance>174.75</distance>
+				<tolldistance>0</tolldistance>
+				<debtor_id matchmode="0"/>
+				<transportkind_id matchmode="0"/>
+				<planningnote/>
+				<invoicemethod_id matchmode="0"/>
+				<invoicecode/>
+				<noinvoice/>
+				<noautosplit/>
+				<blockplanning/>
+				<returnshipment/>
+				<followup/>
+				<version/>
+				<invoiceremarks/>
+				<tag>2F4B0981-229B-46E5-A328-0C242D8A6A28</tag>
+				<sender>
+					<address_id matchmode="0" overwrite="false">40503</address_id>
+					<name>Pietje puk</name>
+					<address1>Citroenvlinder 120</address1>
+					<zipcode>7943</zipcode>
+					<city_id matchmode="4">Meppel</city_id>
+					<country_id matchmode="0">7</country_id>
+					<contact/>
+					<language_id matchmode="0"/>
+					<email/>
+					<phone/>
+					<mobile/>
+					<fax/>
+				</sender>
+				<receiver>
+					<address_id matchmode="0" overwrite="false">45566</address_id>
+					<name>Amsterdam Centraal</name>
+					<address1>Stationsplein 1</address1>
+					<zipcode>1012AB</zipcode>
+					<city_id matchmode="4">Amsterdam</city_id>
+					<country_id matchmode="0">7</country_id>
+					<contact/>
+					<language_id matchmode="0"/>
+					<email/>
+					<phone/>
+					<mobile/>
+					<fax/>
+				</receiver>
+				<pickupaddress>
+					<reference/>
+					<date>2021-09-14</date>
+					<time>08:00</time>
+					<datetill/>
+					<timetill>18:00</timetill>
+					<fixeddate/>
+					<timeindication_id matchmode="0"/>
+					<address_id matchmode="0" overwrite="false">40581</address_id>
+					<name>Art Systems B.V.</name>
+					<address1>Rozenburglaan 1</address1>
+					<address2/>
+					<zipcode>9727 DL</zipcode>
+					<city_id matchmode="0">2309</city_id>
+					<country_id matchmode="0">7</country_id>
+					<dock_id matchmode="0"/>
+					<contact/>
+					<language_id matchmode="0"/>
+					<email>info@artsystems.nl</email>
+					<phone>050-5445105</phone>
+					<mobile/>
+					<fax/>
+					<driverinfo>Fust retour</driverinfo>
+					<remarks>3x op de deurbel drukken</remarks>
+					<private/>
+					<latitude>53.19619</latitude>
+					<longitude>6.53306</longitude>
+					<neutraladdress_id matchmode="0"/>
+					<clearanceaddress_id matchmode="0"/>
+					<preferreddate/>
+					<preferredtime/>
+					<preferreddatetill/>
+					<preferredtimetill/>
+					<duration>30</duration>
+					<ediproviderdepot_id matchmode="1"/>
+					<capabilities/>
+					<timewindows/>
+				</pickupaddress>
+				<deliveryaddress>
+					<reference/>
+					<date rulesetlookup="0">2021-09-15</date>
+					<time>07:00</time>
+					<datetill/>
+					<timetill>14:00</timetill>
+					<fixeddate/>
+					<timeindication_id matchmode="0"/>
+					<address_id matchmode="0" overwrite="false">45566</address_id>
+					<name>Amsterdam Centraal</name>
+					<address1>Stationsplein 1</address1>
+					<address2/>
+					<zipcode>1012AB</zipcode>
+					<city_id matchmode="0">1</city_id>
+					<country_id matchmode="0">7</country_id>
+					<dock_id matchmode="0"/>
+					<contact/>
+					<language_id matchmode="0"/>
+					<email/>
+					<phone/>
+					<mobile/>
+					<fax/>
+					<driverinfo>Fust laden</driverinfo>
+					<remarks/>
+					<private/>
+					<latitude>52.3774261</latitude>
+					<longitude>4.90304278</longitude>
+					<neutraladdress_id matchmode="0"/>
+					<clearanceaddress_id matchmode="0"/>
+					<preferreddate/>
+					<preferredtime/>
+					<preferreddatetill/>
+					<preferredtimetill/>
+					<duration>20</duration>
+					<ediproviderdepot_id matchmode="1"/>
+					<capabilities/>
+					<timewindows/>
+				</deliveryaddress>
+				<cod>
+					<amount/>
+					<currency_id matchmode="0"/>
+					<paymentmethod_id matchmode="0"/>
+				</cod>
+				<extracosts>
+					<extracostsline>
+						<extracostskind_id matchmode="0">43</extracostskind_id>
+						<description>ADR extra gevaarlijk</description>
+						<product_id matchmode="0"/>
+						<unitamount>2.5</unitamount>
+						<unit_id matchmode="0"/>
+						<unitprice>22.5000</unitprice>
+						<amount>56.2500</amount>
+						<unitkind_id matchmode="0"/>
+						<debtor_id matchmode="0">33100</debtor_id>
+						<edireference/>
+						<tag>3A88DFAD-297B-4B04-B528-59D0CB54D2E5</tag>
+					</extracostsline>
+				</extracosts>
+				<references/>
+				<crossdocks>
+					<address>
+						<sequence>1</sequence>
+						<address_id matchmode="0"/>
+						<dock_id matchmode="0"/>
+						<unloadingdateoffset/>
+						<unloadingtime/>
+						<unloadingtimetill/>
+						<unloadingduration/>
+						<loadingdateoffset/>
+						<loadingtime/>
+						<loadingtimetill/>
+						<loadingduration/>
+						<tag>8CB59527-3EAF-4230-97D5-1991BEA678DE</tag>
+					</address>
+				</crossdocks>
+				<parties/>
+				<documents/>
+				<cargo>
+					<unitamount>5</unitamount>
+					<unit_id matchmode="0">180</unit_id>
+					<article_id matchmode="0"/>
+					<articlenumber/>
+					<product_id matchmode="0">1136</product_id>
+					<productdescription>3 laags</productdescription>
+					<weight/>
+					<loadingmeter>2.5</loadingmeter>
+					<volume>5</volume>
+					<palletplaces/>
+					<containers/>
+					<shelves/>
+					<extentions/>
+					<colli>100</colli>
+					<qty1>50</qty1>
+					<qty2>50</qty2>
+					<qty3/>
+					<qty4/>
+					<length/>
+					<width/>
+					<height/>
+					<mintemperature>5</mintemperature>
+					<maxtemperature>50</maxtemperature>
+					<temperaturesetpoint/>
+					<cargovalue>15.0000</cargovalue>
+					<numberofstickers/>
+					<bool1/>
+					<bool2>true</bool2>
+					<bool3/>
+					<bool4/>
+					<bool5/>
+					<bool6/>
+					<bool7/>
+					<bool8/>
+					<lookup1_id matchmode="0"/>
+					<lookup2_id matchmode="0"/>
+					<money1/>
+					<money2/>
+					<money3/>
+					<money4/>
+					<tariffunit_id matchmode="0">180</tariffunit_id>
+					<documentnumbers/>
+					<externalcustomerid/>
+					<externalshipmentid/>
+					<barcode/>
+					<cmrnumber/>
+					<incoterm_id matchmode="0">4</incoterm_id>
+					<gmpclass_id matchmode="0"/>
+					<exchangeemballage/>
+					<internalremarks/>
+					<capabilities/>
+					<dangerousgoods/>
+					<goodslines>
+						<goodsline>
+							<sequence>1</sequence>
+							<edireference/>
+							<ediproviderstatus_id matchmode="0"/>
+							<unitamount>3</unitamount>
+							<unit_id matchmode="0">180</unit_id>
+							<article_id matchmode="0"/>
+							<product_id matchmode="0">1136</product_id>
+							<productdescription/>
+							<articlenumber/>
+							<articlegroup/>
+							<weight>30</weight>
+							<loadingmeter>1.5</loadingmeter>
+							<volume/>
+							<palletplaces/>
+							<containers/>
+							<colli/>
+							<qty1/>
+							<qty2/>
+							<qty3/>
+							<qty4/>
+							<length/>
+							<width/>
+							<height/>
+							<mintemperature/>
+							<maxtemperature/>
+							<temperaturesetpoint/>
+							<tariffunit_id matchmode="0">180</tariffunit_id>
+							<reference/>
+							<reference2/>
+							<externalcustomerid/>
+							<externalshipmentid/>
+							<ean/>
+							<barcode/>
+							<consolidationbarcode/>
+							<remarks/>
+							<gmpclass_id matchmode="0"/>
+							<exchangeemballage/>
+							<tag>490E4A2C-4409-41EF-83D5-523D1C110B54</tag>
+							<references/>
+							<dangerousgoods>
+								<item>
+									<edireference>123</edireference>
+									<number>UN3243</number>
+									<description>VASTE STOFFEN DIE GIFTIGE VLOEISTOF BEVATTEN, N.E.G.</description>
+									<adrclass_id matchmode="0">50</adrclass_id>
+									<class>6.1</class>
+									<classificationcode>T9</classificationcode>
+									<packagegroup>II</packagegroup>
+									<symbols>60</symbols>
+									<labelcodes>6.1</labelcodes>
+									<specialprovisions>217 274 601</specialprovisions>
+									<transportcategory>2</transportcategory>
+									<tunnelcode>D/E</tunnelcode>
+									<unitamount/>
+									<unitdescription/>
+									<weight/>
+									<volume/>
+									<limitedquantity/>
+									<environmentalhazard/>
+									<waste/>
+									<chemicalname/>
+									<hazardousmaterial_id matchmode="0">5426</hazardousmaterial_id>
+								</item>
+							</dangerousgoods>
+							<goodsitems>
+								<goodsitem>
+									<edireference/>
+									<unitamount>10</unitamount>
+									<unit_id matchmode="0">143</unit_id>
+									<description/>
+									<articlenumber/>
+									<article_id matchmode="0"/>
+									<weight>10</weight>
+									<volume>1</volume>
+									<length>50</length>
+									<width>20</width>
+									<height>100</height>
+									<ean/>
+									<barcode/>
+									<consolidationbarcode/>
+									<remarks/>
+									<lot/>
+									<type/>
+									<type2/>
+									<type3/>
+									<palletid/>
+									<expiredate/>
+									<productiondate/>
+									<tag>6BEBFA5E-B716-4FF7-B998-F678B85DFA5B</tag>
+									<dangerousgoods>
+										<item>
+											<edireference>123</edireference>
+											<number>UN0081</number>
+											<description>SPRINGSTOF, TYPE A</description>
+											<adrclass_id matchmode="0">1</adrclass_id>
+											<class>1</class>
+											<classificationcode>1.1D</classificationcode>
+											<packagegroup/>
+											<symbols/>
+											<labelcodes>1</labelcodes>
+											<specialprovisions>616 617</specialprovisions>
+											<transportcategory>1</transportcategory>
+											<tunnelcode>B1000C</tunnelcode>
+											<unitamount/>
+											<unitdescription/>
+											<weight/>
+											<volume/>
+											<limitedquantity/>
+											<environmentalhazard/>
+											<waste/>
+											<chemicalname/>
+											<hazardousmaterial_id matchmode="0">2977</hazardousmaterial_id>
+										</item>
+									</dangerousgoods>
+								</goodsitem>
+							</goodsitems>
+						</goodsline>
+					</goodslines>
+				</cargo>
+			</shipment>
+		</shipments>
+	</transportbooking>
+</transportbookings>

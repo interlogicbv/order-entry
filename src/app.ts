@@ -3,6 +3,7 @@ import * as path from "path";
 import { XMLParser, XMLBuilder } from "fast-xml-parser";
 
 // Todo: XSD validating
+const DEBUGGING = false;
 
 // Default directories
 const inputDirectory = "./src/input";
@@ -87,6 +88,13 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                   "cac:ConsolidatedShipment"
                 ]["cbc:ID"],
               reference: `${inputObject.Manifest["cbc:ID"]} ${inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cbc:ID"]}`,
+              fixedprice: inputObject.Manifest["cac:Shipment"][
+                "cac:FreightAllowanceCharge"
+              ].reduce(
+                (sum: number, current: number) =>
+                  sum + parseFloat(current["cbc:Amount"]["#text"]),
+                0
+              ),
               pickupaddress: {
                 reference: inputObject.Manifest["cac:Shipment"][
                   "cac:Consignment"
@@ -130,6 +138,14 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                     "cbc:IdentificationCode"
                   ],
                 },
+                driverinfo:
+                  inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
+                    "cac:ConsolidatedShipment"
+                  ]["cac:Consignment"]["cbc:SpecialInstructions"]?.join(" / "),
+                remarks:
+                  inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
+                    "cac:ConsolidatedShipment"
+                  ]["cac:Consignment"]["cbc:SpecialInstructions"]?.join(" / "),
               },
               deliveryaddress: {
                 reference: inputObject.Manifest["cac:Shipment"][
@@ -172,6 +188,14 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                     "cac:Location"
                   ]["cac:Address"]["cac:Country"]["cbc:IdentificationCode"],
                 },
+                driverinfo:
+                  inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
+                    "cac:ConsolidatedShipment"
+                  ]["cac:Consignment"]["cbc:SpecialInstructions"]?.join(" / "),
+                remarks:
+                  inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
+                    "cac:ConsolidatedShipment"
+                  ]["cac:Consignment"]["cbc:SpecialInstructions"]?.join(" / "),
               },
               cargo: {
                 unitamount:
@@ -179,7 +203,10 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                     "cac:ConsolidatedShipment"
                   ]["cac:Consignment"][
                     "cbc:TotalTransportHandlingUnitQuantity"
-                  ],
+                  ] ||
+                  inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
+                    "cac:ConsolidatedShipment"
+                  ]["cac:Consignment"]["cbc:TotalGoodsItemQuantity"]["#text"],
                 unit_id: {
                   $matchmode: "1",
                   "#text": "COL",
@@ -193,15 +220,6 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                     "cac:ConsolidatedShipment"
                   ]["cac:Consignment"]["cbc:LoadingLengthMeasure"]["#text"],
               },
-              cod: {
-                amount: inputObject.Manifest["cac:Shipment"][
-                  "cac:FreightAllowanceCharge"
-                ].reduce(
-                  (sum: number, current: number) =>
-                    sum + parseFloat(current["cbc:Amount"]["#text"]),
-                  0
-                ),
-              },
             },
           },
         },
@@ -214,7 +232,7 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
     console.log(`✅ Successfully generated: ${ref}-${index}.xml`);
     data = [];
     events = [];
-    fs.unlinkSync(`./src/input/${file}`);
+    !DEBUGGING ? fs.unlinkSync(`./src/input/${file}`) : null;
   } catch (error) {
     console.error(`❌ Error generating output from: ${file}: `, error);
   }

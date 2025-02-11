@@ -46,6 +46,7 @@ const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const fast_xml_parser_1 = require("fast-xml-parser");
 // Todo: XSD validating
+const DEBUGGING = false;
 // Default directories
 const inputDirectory = "./src/input";
 const outputDirectory = "./src/output";
@@ -83,6 +84,7 @@ const readInputFiles = () => {
     });
 };
 const generateOutputFile = (inputObject, file, index) => {
+    var _a, _b, _c, _d;
     try {
         // XML builder
         const builder = new fast_xml_parser_1.XMLBuilder({
@@ -115,6 +117,7 @@ const generateOutputFile = (inputObject, file, index) => {
                         shipment: {
                             edireference: inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cbc:ID"],
                             reference: `${inputObject.Manifest["cbc:ID"]} ${inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cbc:ID"]}`,
+                            fixedprice: inputObject.Manifest["cac:Shipment"]["cac:FreightAllowanceCharge"].reduce((sum, current) => sum + parseFloat(current["cbc:Amount"]["#text"]), 0),
                             pickupaddress: {
                                 reference: inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cac:DocumentReference"].find((d) => d["cbc:ID"]["#text"] === 101)["cbc:DocumentTypeCode"],
                                 address_id: {
@@ -134,6 +137,8 @@ const generateOutputFile = (inputObject, file, index) => {
                                     $matchmode: "2",
                                     "#text": data.find((d) => d["cbc:Description"] === "from")["cac:Location"]["cac:Address"]["cac:Country"]["cbc:IdentificationCode"],
                                 },
+                                driverinfo: (_a = inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:SpecialInstructions"]) === null || _a === void 0 ? void 0 : _a.join(" / "),
+                                remarks: (_b = inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:SpecialInstructions"]) === null || _b === void 0 ? void 0 : _b.join(" / "),
                             },
                             deliveryaddress: {
                                 reference: inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cac:DocumentReference"].find((d) => d["cbc:ID"]["#text"] === 103)["cbc:DocumentTypeCode"],
@@ -154,18 +159,18 @@ const generateOutputFile = (inputObject, file, index) => {
                                     $matchmode: "2",
                                     "#text": data.find((d) => d["cbc:Description"] === "to")["cac:Location"]["cac:Address"]["cac:Country"]["cbc:IdentificationCode"],
                                 },
+                                driverinfo: (_c = inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:SpecialInstructions"]) === null || _c === void 0 ? void 0 : _c.join(" / "),
+                                remarks: (_d = inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:SpecialInstructions"]) === null || _d === void 0 ? void 0 : _d.join(" / "),
                             },
                             cargo: {
-                                unitamount: inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:TotalTransportHandlingUnitQuantity"],
+                                unitamount: inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:TotalTransportHandlingUnitQuantity"] ||
+                                    inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:TotalGoodsItemQuantity"]["#text"],
                                 unit_id: {
                                     $matchmode: "1",
                                     "#text": "COL",
                                 },
                                 weight: inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:GrossWeightMeasure"]["#text"],
                                 loadingmeter: inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:LoadingLengthMeasure"]["#text"],
-                            },
-                            cod: {
-                                amount: inputObject.Manifest["cac:Shipment"]["cac:FreightAllowanceCharge"].reduce((sum, current) => sum + parseFloat(current["cbc:Amount"]["#text"]), 0),
                             },
                         },
                     },
@@ -179,7 +184,7 @@ const generateOutputFile = (inputObject, file, index) => {
         console.log(`✅ Successfully generated: ${ref}-${index}.xml`);
         data = [];
         events = [];
-        fs.unlinkSync(`./src/input/${file}`);
+        !DEBUGGING ? fs.unlinkSync(`./src/input/${file}`) : null;
     }
     catch (error) {
         console.error(`❌ Error generating output from: ${file}: `, error);
