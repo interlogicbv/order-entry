@@ -84,7 +84,6 @@ const readInputFiles = () => {
     });
 };
 const generateOutputFile = (inputObject, file, index) => {
-    var _a, _b, _c, _d;
     try {
         // XML builder
         const builder = new fast_xml_parser_1.XMLBuilder({
@@ -103,6 +102,31 @@ const generateOutputFile = (inputObject, file, index) => {
             // More than one event
             data = events.map((e) => e["cac:TransportEvent"]);
         }
+        // Loading Address
+        let loadingAddress1;
+        let loadingAddress2;
+        const loadingAddressData = data.find((d) => d["cbc:Description"] === "from")["cac:Location"]["cac:Address"]["cac:AddressLine"];
+        if (Array.isArray(loadingAddressData)) {
+            loadingAddress1 = loadingAddressData[0]["cbc:Line"];
+            loadingAddress2 = loadingAddressData[1]["cbc:Line"];
+        }
+        else {
+            loadingAddress1 = loadingAddressData["cbc:Line"];
+        }
+        // Unloading Address
+        let unloadingAddress1;
+        let unloadingAddress2;
+        const unloadingAddressData = data.find((d) => d["cbc:Description"] === "to")["cac:Location"]["cac:Address"]["cac:AddressLine"];
+        if (Array.isArray(unloadingAddressData)) {
+            unloadingAddress1 = unloadingAddressData[0]["cbc:Line"];
+            unloadingAddress2 = unloadingAddressData[1]["cbc:Line"];
+        }
+        else {
+            unloadingAddress1 = unloadingAddressData["cbc:Line"];
+        }
+        const serviceLevel = inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:ShippingPriorityLevelCode"];
+        // Instructions
+        const instructions = inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:SpecialInstructions"];
         // Build the XML file
         const outputContent = builder.build({
             transportbookings: {
@@ -127,7 +151,8 @@ const generateOutputFile = (inputObject, file, index) => {
                                 name: data.find((d) => d["cbc:Description"] === "from")["cac:Location"]["cbc:Name"],
                                 date: data.find((d) => d["cbc:Description"] === "from")["cbc:OccurrenceDate"],
                                 time: data.find((d) => d["cbc:Description"] === "from")["cbc:OccurrenceTime"],
-                                address1: data.find((d) => d["cbc:Description"] === "from")["cac:Location"]["cac:Address"]["cac:AddressLine"]["cbc:Line"],
+                                address1: loadingAddress1,
+                                address2: loadingAddress2,
                                 zipcode: data.find((d) => d["cbc:Description"] === "from")["cac:Location"]["cac:Address"]["cbc:PostalZone"],
                                 city_id: {
                                     $matchmode: "4",
@@ -137,8 +162,16 @@ const generateOutputFile = (inputObject, file, index) => {
                                     $matchmode: "2",
                                     "#text": data.find((d) => d["cbc:Description"] === "from")["cac:Location"]["cac:Address"]["cac:Country"]["cbc:IdentificationCode"],
                                 },
-                                driverinfo: (_a = inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:SpecialInstructions"]) === null || _a === void 0 ? void 0 : _a.join(" / "),
-                                remarks: (_b = inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:SpecialInstructions"]) === null || _b === void 0 ? void 0 : _b.join(" / "),
+                                driverinfo: instructions !== undefined
+                                    ? Array.isArray(instructions)
+                                        ? instructions.join(" / ")
+                                        : instructions
+                                    : null,
+                                remarks: instructions !== undefined
+                                    ? Array.isArray(instructions)
+                                        ? instructions.join(" / ")
+                                        : instructions
+                                    : null,
                             },
                             deliveryaddress: {
                                 reference: inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cac:DocumentReference"].find((d) => d["cbc:ID"]["#text"] === 103)["cbc:DocumentTypeCode"],
@@ -149,7 +182,13 @@ const generateOutputFile = (inputObject, file, index) => {
                                 name: data.find((d) => d["cbc:Description"] === "to")["cac:Location"]["cbc:Name"],
                                 date: data.find((d) => d["cbc:Description"] === "to")["cbc:OccurrenceDate"],
                                 time: data.find((d) => d["cbc:Description"] === "to")["cbc:OccurrenceTime"],
-                                address1: data.find((d) => d["cbc:Description"] === "to")["cac:Location"]["cac:Address"]["cac:AddressLine"]["cbc:Line"],
+                                fixeddate: Array.isArray(serviceLevel)
+                                    ? serviceLevel.includes("FON")
+                                    : serviceLevel !== undefined
+                                        ? serviceLevel === "FON"
+                                        : false,
+                                address1: unloadingAddress1,
+                                address2: unloadingAddress2,
                                 zipcode: data.find((d) => d["cbc:Description"] === "to")["cac:Location"]["cac:Address"]["cbc:PostalZone"],
                                 city_id: {
                                     $matchmode: "4",
@@ -159,18 +198,49 @@ const generateOutputFile = (inputObject, file, index) => {
                                     $matchmode: "2",
                                     "#text": data.find((d) => d["cbc:Description"] === "to")["cac:Location"]["cac:Address"]["cac:Country"]["cbc:IdentificationCode"],
                                 },
-                                driverinfo: (_c = inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:SpecialInstructions"]) === null || _c === void 0 ? void 0 : _c.join(" / "),
-                                remarks: (_d = inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:SpecialInstructions"]) === null || _d === void 0 ? void 0 : _d.join(" / "),
+                                driverinfo: instructions !== undefined
+                                    ? Array.isArray(instructions)
+                                        ? instructions.join(" / ")
+                                        : instructions
+                                    : null,
+                                remarks: instructions !== undefined
+                                    ? Array.isArray(instructions)
+                                        ? instructions.join(" / ")
+                                        : instructions
+                                    : null,
                             },
                             cargo: {
                                 unitamount: inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:TotalTransportHandlingUnitQuantity"] ||
                                     inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:TotalGoodsItemQuantity"]["#text"],
                                 unit_id: {
                                     $matchmode: "1",
-                                    "#text": "COL",
+                                    "#text": inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:HandlingInstructions"].includes("PALLRUILLD:true") ||
+                                        inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:HandlingInstructions"].includes("PALLRUILLS:true")
+                                        ? "Euro"
+                                        : "COL",
                                 },
                                 weight: inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:GrossWeightMeasure"]["#text"],
                                 loadingmeter: inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:LoadingLengthMeasure"]["#text"],
+                                // Kooiaap
+                                bool1: inputObject.Manifest["cac:Shipment"]["cac:FreightAllowanceCharge"]
+                                    .map((i) => i["cbc:AllowanceChargeReasonCode"])
+                                    .includes(238),
+                                // Laadklep
+                                bool2: inputObject.Manifest["cac:Shipment"]["cac:FreightAllowanceCharge"]
+                                    .map((i) => i["cbc:AllowanceChargeReasonCode"])
+                                    .includes(144),
+                                // Pallet ruil
+                                bool3: inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:HandlingInstructions"].includes("PALLRUILLD:true") ||
+                                    inputObject.Manifest["cac:Shipment"]["cac:Consignment"]["cac:ConsolidatedShipment"]["cac:Consignment"]["cbc:HandlingInstructions"].includes("PALLRUILLS:true"),
+                                // ADR
+                                adrclass_id: {
+                                    $matchmode: "3",
+                                    "#text": inputObject.Manifest["cac:Shipment"]["cac:FreightAllowanceCharge"]
+                                        .map((i) => i["cbc:AllowanceChargeReasonCode"])
+                                        .includes(176)
+                                        ? "ADR"
+                                        : "",
+                                },
                             },
                         },
                     },

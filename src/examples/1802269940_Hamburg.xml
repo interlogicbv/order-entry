@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Manifest xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1"
+          xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+          xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+          xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+          xmlns="urn:oasis:names:specification:ubl:schema:xsd:Manifest-2"
+          xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2">
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>urn:neelevat.com:ubl-2.3-customizations:2023-01</cbc:CustomizationID>
+   <cbc:ProfileID schemeAgencyID="https://neelevat.com">urn:neelevat.com:profile:Manifest:ver1.0</cbc:ProfileID>
+   <cbc:ID>1802269940</cbc:ID>
+   <cbc:ManifestType>Manifest</cbc:ManifestType>
+   <cac:SendingLogisticsOperatorParty>
+      <cac:PartyName>
+         <cbc:Name>Neele-Vat</cbc:Name>
+      </cac:PartyName>
+      <cac:Contact>
+         <cbc:Name>Linda.Ouwendijk-Bouwmeester@neeleva</cbc:Name>
+      </cac:Contact>
+   </cac:SendingLogisticsOperatorParty>
+   <cac:Shipment>
+      <cbc:ID>1802269940</cbc:ID>
+      <cac:Consignment>
+         <cbc:ID>ED 20 HAMBURG 3516</cbc:ID>
+         <cbc:ConsignorAssignedID>ED 20 HAMBURG 3516</cbc:ConsignorAssignedID>
+         <cbc:GrossWeightMeasure unitCode="KGM">1370.000</cbc:GrossWeightMeasure>
+         <cbc:NetWeightMeasure unitCode="KGM">0.000</cbc:NetWeightMeasure>
+         <cbc:ChargeableWeightMeasure unitCode="KGM">1750.000</cbc:ChargeableWeightMeasure>
+         <cbc:GrossVolumeMeasure unitCode="MTQ">5.303</cbc:GrossVolumeMeasure>
+         <cbc:TotalGoodsItemQuantity unitCode="CO">6.000</cbc:TotalGoodsItemQuantity>
+         <cac:ConsolidatedShipment>
+            <cbc:ID>1021473516</cbc:ID>
+            <cac:Consignment>
+               <cbc:ID>1021473516</cbc:ID>
+               <cbc:TotalInvoiceAmount currencyID="EUR">0.00</cbc:TotalInvoiceAmount>
+               <cbc:GrossWeightMeasure unitCode="KGM">1370.000</cbc:GrossWeightMeasure>
+               <cbc:NetWeightMeasure unitCode="KGM">0.000</cbc:NetWeightMeasure>
+               <cbc:ChargeableWeightMeasure unitCode="KGM">1544.000</cbc:ChargeableWeightMeasure>
+               <cbc:GrossVolumeMeasure unitCode="MTR">1.000</cbc:GrossVolumeMeasure>
+               <cbc:LoadingLengthMeasure unitCode="MTR">1.000</cbc:LoadingLengthMeasure>
+               <cbc:HandlingInstructions>PALlRUILLD:false</cbc:HandlingInstructions>
+               <cbc:HandlingInstructions>PALLRUILLS:false</cbc:HandlingInstructions>
+               <cbc:HandlingInstructions>TEMPERATUR:false</cbc:HandlingInstructions>
+               <cbc:HandlingInstructions>PALLETS:2</cbc:HandlingInstructions>
+               <cbc:HandlingInstructions>PALLETCODE:PL</cbc:HandlingInstructions>
+               <cbc:HandlingInstructions>STAPELBAAR:false</cbc:HandlingInstructions>
+               <cbc:TotalGoodsItemQuantity unitCode="DR">6.000</cbc:TotalGoodsItemQuantity>
+               <cbc:TotalTransportHandlingUnitQuantity>2</cbc:TotalTransportHandlingUnitQuantity>
+               <cbc:SpecialInstructions>fix delivery day</cbc:SpecialInstructions>
+               <cac:RequestedPickupTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-11</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+               </cac:RequestedPickupTransportEvent>
+               <cac:RequestedDeliveryTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-12</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>11:30:00</cbc:OccurrenceTime>
+               </cac:RequestedDeliveryTransportEvent>
+               <cac:ConsigneeParty>
+                  <cac:PartyName>
+                     <cbc:Name>SHELL GERMANY</cbc:Name>
+                  </cac:PartyName>
+                  <cac:PartyName>
+                     <cbc:Name>GRASBROOK NTH LUBPROD</cbc:Name>
+                  </cac:PartyName>
+                  <cac:PhysicalLocation>
+                     <cac:Address>
+                        <cbc:CityName>HAMBURG</cbc:CityName>
+                        <cbc:PostalZone>20457</cbc:PostalZone>
+                        <cac:AddressLine>
+                           <cbc:Line>WORTHDAMM 32-50</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                           <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+                        </cac:Country>
+                     </cac:Address>
+                     <cac:LocationCoordinate>
+                        <cbc:LatitudeDegreesMeasure unitCode="dd">9.9818899997836</cbc:LatitudeDegreesMeasure>
+                        <cbc:LongitudeDegreesMeasure unitCode="dd">53.534440000211</cbc:LongitudeDegreesMeasure>
+                     </cac:LocationCoordinate>
+                  </cac:PhysicalLocation>
+               </cac:ConsigneeParty>
+               <cac:ConsignorParty>
+                  <cac:PartyName>
+                     <cbc:Name>Allround Cargo Handling B.V.</cbc:Name>
+                  </cac:PartyName>
+                  <cac:PhysicalLocation>
+                     <cac:Address>
+                        <cbc:CityName>RIDDERKERK</cbc:CityName>
+                        <cbc:PostalZone>2988 DG</cbc:PostalZone>
+                        <cac:AddressLine>
+                           <cbc:Line>Selderijweg 80</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                           <cbc:IdentificationCode>NL</cbc:IdentificationCode>
+                        </cac:Country>
+                     </cac:Address>
+                     <cac:LocationCoordinate>
+                        <cbc:LatitudeDegreesMeasure unitCode="dd">4.5984600000000</cbc:LatitudeDegreesMeasure>
+                        <cbc:LongitudeDegreesMeasure unitCode="dd">51.871840000000</cbc:LongitudeDegreesMeasure>
+                     </cac:LocationCoordinate>
+                  </cac:PhysicalLocation>
+               </cac:ConsignorParty>
+               <cac:OriginalDespatchParty>
+                  <cac:PartyName>
+                     <cbc:Name>VABIX EXPEDITIE BV</cbc:Name>
+                  </cac:PartyName>
+                  <cac:PartyName>
+                     <cbc:Name>C/O ALLROUND CARGO HANDLING</cbc:Name>
+                  </cac:PartyName>
+                  <cac:PhysicalLocation>
+                     <cbc:Conditions>FIX L.DAY:Fix Laaddag</cbc:Conditions>
+                     <cbc:Conditions>SAFETY:Safetyshoes(high)/Goggles/Helmet</cbc:Conditions>
+                     <cac:ValidityPeriod>
+                        <cbc:StartTime>08:00:00</cbc:StartTime>
+                        <cbc:EndTime>15:30:00</cbc:EndTime>
+                     </cac:ValidityPeriod>
+                     <cac:Address>
+                        <cbc:CityName>ROTTERDAM-WAALHAVEN</cbc:CityName>
+                        <cbc:PostalZone>3084 CB</cbc:PostalZone>
+                        <cac:AddressLine>
+                           <cbc:Line>DRIEMANSSTEEWEG 560</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                           <cbc:IdentificationCode>NL</cbc:IdentificationCode>
+                        </cac:Country>
+                     </cac:Address>
+                     <cac:LocationCoordinate>
+                        <cbc:LatitudeDegreesMeasure unitCode="dd">4.4709500000000</cbc:LatitudeDegreesMeasure>
+                        <cbc:LongitudeDegreesMeasure unitCode="dd">51.862840000000</cbc:LongitudeDegreesMeasure>
+                     </cac:LocationCoordinate>
+                  </cac:PhysicalLocation>
+               </cac:OriginalDespatchParty>
+               <cac:FinalDeliveryParty>
+                  <cac:PartyName>
+                     <cbc:Name>SHELL GERMANY</cbc:Name>
+                  </cac:PartyName>
+                  <cac:PartyName>
+                     <cbc:Name>GRASBROOK NTH LUBPROD</cbc:Name>
+                  </cac:PartyName>
+                  <cac:PhysicalLocation>
+                     <cac:ValidityPeriod>
+                        <cbc:StartTime>06:30:00</cbc:StartTime>
+                        <cbc:EndTime>11:30:00</cbc:EndTime>
+                     </cac:ValidityPeriod>
+                     <cac:Address>
+                        <cbc:CityName>HAMBURG</cbc:CityName>
+                        <cbc:PostalZone>20457</cbc:PostalZone>
+                        <cac:AddressLine>
+                           <cbc:Line>WORTHDAMM 32-50</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                           <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+                        </cac:Country>
+                     </cac:Address>
+                     <cac:LocationCoordinate>
+                        <cbc:LatitudeDegreesMeasure unitCode="dd">9.9818899997836</cbc:LatitudeDegreesMeasure>
+                        <cbc:LongitudeDegreesMeasure unitCode="dd">53.534440000211</cbc:LongitudeDegreesMeasure>
+                     </cac:LocationCoordinate>
+                  </cac:PhysicalLocation>
+               </cac:FinalDeliveryParty>
+               <cac:OriginalDespatchTransportationService>
+                  <cbc:TransportServiceCode>Default</cbc:TransportServiceCode>
+                  <cac:CommodityClassification>
+                     <cbc:CommodityCode name="lubad 742"/>
+                  </cac:CommodityClassification>
+               </cac:OriginalDespatchTransportationService>
+               <cac:DocumentReference>
+                  <cbc:ID schemeID="ediReference">Tm000322948-000001021473516</cbc:ID>
+               </cac:DocumentReference>
+               <cac:DocumentReference>
+                  <cbc:ID schemeID="shipmentReference">101</cbc:ID>
+                  <cbc:DocumentTypeCode>7106879+7106905</cbc:DocumentTypeCode>
+               </cac:DocumentReference>
+               <cac:DocumentReference>
+                  <cbc:ID schemeID="shipmentReference">103</cbc:ID>
+                  <cbc:DocumentTypeCode>4545709425+4546052611</cbc:DocumentTypeCode>
+               </cac:DocumentReference>
+            </cac:Consignment>
+            <cac:GoodsItem>
+               <cbc:ID>7106857</cbc:ID>
+               <cbc:Description>nasul BSB</cbc:Description>
+               <cbc:ValueAmount currencyID="EUR">0.00</cbc:ValueAmount>
+               <cbc:GrossWeightMeasure unitCode="KGM">936.000</cbc:GrossWeightMeasure>
+               <cbc:NetWeightMeasure unitCode="KGM">0.000</cbc:NetWeightMeasure>
+               <cbc:GrossVolumeMeasure unitCode="MTR">0.600</cbc:GrossVolumeMeasure>
+               <cbc:Quantity unitCode="DR">4.000</cbc:Quantity>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>loadingMeters</cbc:AttributeID>
+                  <cbc:Measure unitCode="MTR">0.600</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:ContainingPackage>
+                  <cbc:ID schemeID="goodsItemSubQuantity">1</cbc:ID>
+                  <cbc:Quantity unitCode="P5">1.000</cbc:Quantity>
+                  <cac:MeasurementDimension>
+                     <cbc:AttributeID>length</cbc:AttributeID>
+                     <cbc:Measure unitCode="MTR">1.150</cbc:Measure>
+                  </cac:MeasurementDimension>
+                  <cac:MeasurementDimension>
+                     <cbc:AttributeID>width</cbc:AttributeID>
+                     <cbc:Measure unitCode="MTR">1.150</cbc:Measure>
+                  </cac:MeasurementDimension>
+                  <cac:MeasurementDimension>
+                     <cbc:AttributeID>height</cbc:AttributeID>
+                     <cbc:Measure unitCode="MTR">0.000</cbc:Measure>
+                  </cac:MeasurementDimension>
+               </cac:ContainingPackage>
+               <cac:ContainingPackage>
+                  <cbc:ID schemeID="shippingUnit">310000000126463079</cbc:ID>
+                  <cbc:Quantity unitCode="DR">1.000</cbc:Quantity>
+               </cac:ContainingPackage>
+               <cac:ContainingPackage>
+                  <cbc:ID schemeID="shippingUnit">310000000126463086</cbc:ID>
+                  <cbc:Quantity unitCode="DR">1.000</cbc:Quantity>
+               </cac:ContainingPackage>
+               <cac:ContainingPackage>
+                  <cbc:ID schemeID="shippingUnit">310000000126463093</cbc:ID>
+                  <cbc:Quantity unitCode="DR">1.000</cbc:Quantity>
+               </cac:ContainingPackage>
+               <cac:ContainingPackage>
+                  <cbc:ID schemeID="shippingUnit">310000000126463192</cbc:ID>
+                  <cbc:Quantity unitCode="DR">1.000</cbc:Quantity>
+               </cac:ContainingPackage>
+            </cac:GoodsItem>
+            <cac:GoodsItem>
+               <cbc:ID>2</cbc:ID>
+               <cbc:Description>lubad 742</cbc:Description>
+               <cbc:ValueAmount currencyID="EUR">0.00</cbc:ValueAmount>
+               <cbc:GrossWeightMeasure unitCode="KGM">434.000</cbc:GrossWeightMeasure>
+               <cbc:NetWeightMeasure unitCode="KGM">0.000</cbc:NetWeightMeasure>
+               <cbc:GrossVolumeMeasure unitCode="MTR">0.400</cbc:GrossVolumeMeasure>
+               <cbc:Quantity unitCode="DR">2.000</cbc:Quantity>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>loadingMeters</cbc:AttributeID>
+                  <cbc:Measure unitCode="MTR">0.400</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:ContainingPackage>
+                  <cbc:ID schemeID="goodsItemSubQuantity">1</cbc:ID>
+                  <cbc:Quantity unitCode="P5">1.000</cbc:Quantity>
+                  <cac:MeasurementDimension>
+                     <cbc:AttributeID>length</cbc:AttributeID>
+                     <cbc:Measure unitCode="MTR">1.200</cbc:Measure>
+                  </cac:MeasurementDimension>
+                  <cac:MeasurementDimension>
+                     <cbc:AttributeID>width</cbc:AttributeID>
+                     <cbc:Measure unitCode="MTR">0.800</cbc:Measure>
+                  </cac:MeasurementDimension>
+                  <cac:MeasurementDimension>
+                     <cbc:AttributeID>height</cbc:AttributeID>
+                     <cbc:Measure unitCode="MTR">0.000</cbc:Measure>
+                  </cac:MeasurementDimension>
+               </cac:ContainingPackage>
+               <cac:ContainingPackage>
+                  <cbc:ID schemeID="shippingUnit">310000000126463260</cbc:ID>
+                  <cbc:Quantity unitCode="DR">1.000</cbc:Quantity>
+               </cac:ContainingPackage>
+               <cac:ContainingPackage>
+                  <cbc:ID schemeID="shippingUnit">310000000126463277</cbc:ID>
+                  <cbc:Quantity unitCode="DR">1.000</cbc:Quantity>
+               </cac:ContainingPackage>
+            </cac:GoodsItem>
+            <cac:ShipmentStage>
+               <cbc:ShipmentStageType>trip</cbc:ShipmentStageType>
+               <cbc:TransportModeCode>30</cbc:TransportModeCode>
+               <cbc:TransportMeansTypeCode>0</cbc:TransportMeansTypeCode>
+               <cac:TransportMeans>
+                  <cac:RoadTransport>
+                     <cbc:LicensePlateID>0</cbc:LicensePlateID>
+                  </cac:RoadTransport>
+               </cac:TransportMeans>
+               <cac:LoadingTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-11</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+                  <cac:Location>
+                     <cbc:ID>NLRID</cbc:ID>
+                  </cac:Location>
+               </cac:LoadingTransportEvent>
+               <cac:DeliveryTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-12</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>11:30:00</cbc:OccurrenceTime>
+               </cac:DeliveryTransportEvent>
+               <cac:EstimatedDepartureTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-11</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>08:00:00+01:00</cbc:OccurrenceTime>
+                  <cac:Location>
+                     <cbc:ID>NLRID</cbc:ID>
+                  </cac:Location>
+               </cac:EstimatedDepartureTransportEvent>
+               <cac:EstimatedArrivalTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-12</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>11:30:00+01:00</cbc:OccurrenceTime>
+               </cac:EstimatedArrivalTransportEvent>
+            </cac:ShipmentStage>
+            <cac:ShipmentStage>
+               <cbc:ShipmentStageType>trip</cbc:ShipmentStageType>
+               <cbc:TransportModeCode>30</cbc:TransportModeCode>
+               <cbc:TransportMeansTypeCode>0</cbc:TransportMeansTypeCode>
+               <cac:TransportMeans>
+                  <cac:RoadTransport>
+                     <cbc:LicensePlateID>0</cbc:LicensePlateID>
+                  </cac:RoadTransport>
+               </cac:TransportMeans>
+               <cac:LoadingTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-11</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+                  <cac:Location>
+                     <cbc:ID>NLRID</cbc:ID>
+                  </cac:Location>
+               </cac:LoadingTransportEvent>
+               <cac:DeliveryTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-12</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>11:30:00</cbc:OccurrenceTime>
+               </cac:DeliveryTransportEvent>
+               <cac:EstimatedDepartureTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-11</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>08:00:00+01:00</cbc:OccurrenceTime>
+                  <cac:Location>
+                     <cbc:ID>NLRID</cbc:ID>
+                  </cac:Location>
+               </cac:EstimatedDepartureTransportEvent>
+               <cac:EstimatedArrivalTransportEvent>
+                  <cbc:OccurrenceDate>2025-02-12</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>11:30:00+01:00</cbc:OccurrenceTime>
+               </cac:EstimatedArrivalTransportEvent>
+            </cac:ShipmentStage>
+            <cac:ShipmentStage>
+               <cbc:ID>0000010214735160000100001</cbc:ID>
+               <cbc:ShipmentStageType>planning</cbc:ShipmentStageType>
+               <cbc:TransportMeansTypeCode>1</cbc:TransportMeansTypeCode>
+               <cac:TransportEvent>
+                  <cbc:OccurrenceDate>2025-02-11</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+                  <cbc:Description>from</cbc:Description>
+                  <cac:ReportedShipment>
+                     <cac:Consignment>
+                        <cbc:ID>1</cbc:ID>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126463079</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126463086</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126463093</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126463192</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126463260</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126463277</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                     </cac:Consignment>
+                  </cac:ReportedShipment>
+                  <cac:Location>
+                     <cbc:ID>Z-NL</cbc:ID>
+                     <cbc:Name>VABIX EXPEDITIE BV</cbc:Name>
+                     <cac:Address>
+                        <cbc:CityName>ROTTERDAM-WAALHAVEN</cbc:CityName>
+                        <cbc:PostalZone>3084 CB</cbc:PostalZone>
+                        <cac:AddressLine>
+                           <cbc:Line>DRIEMANSSTEEWEG 560</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                           <cbc:IdentificationCode>NL</cbc:IdentificationCode>
+                        </cac:Country>
+                     </cac:Address>
+                  </cac:Location>
+               </cac:TransportEvent>
+            </cac:ShipmentStage>
+            <cac:ShipmentStage>
+               <cbc:ID>0000010214735160000100002</cbc:ID>
+               <cbc:ShipmentStageType>planning</cbc:ShipmentStageType>
+               <cbc:TransportMeansTypeCode>4</cbc:TransportMeansTypeCode>
+               <cac:TransportEvent>
+                  <cbc:OccurrenceDate>2025-02-12</cbc:OccurrenceDate>
+                  <cbc:OccurrenceTime>11:30:00</cbc:OccurrenceTime>
+                  <cbc:Description>to</cbc:Description>
+                  <cac:ReportedShipment>
+                     <cac:Consignment>
+                        <cbc:ID>1</cbc:ID>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126463079</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126463086</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126463093</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126463192</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126463260</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                        <cac:TransportHandlingUnit>
+                           <cbc:ID>310000000126463277</cbc:ID>
+                        </cac:TransportHandlingUnit>
+                     </cac:Consignment>
+                  </cac:ReportedShipment>
+                  <cac:Location>
+                     <cbc:ID>Z-DE</cbc:ID>
+                     <cbc:Name>SHELL GERMANY</cbc:Name>
+                     <cac:Address>
+                        <cbc:CityName>HAMBURG</cbc:CityName>
+                        <cbc:PostalZone>20457</cbc:PostalZone>
+                        <cac:AddressLine>
+                           <cbc:Line>WORTHDAMM 32-50</cbc:Line>
+                        </cac:AddressLine>
+                        <cac:Country>
+                           <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+                        </cac:Country>
+                     </cac:Address>
+                  </cac:Location>
+               </cac:TransportEvent>
+            </cac:ShipmentStage>
+         </cac:ConsolidatedShipment>
+         <cac:RequestedPickupTransportEvent>
+            <cbc:OccurrenceDate>2025-02-11</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+         </cac:RequestedPickupTransportEvent>
+         <cac:RequestedDeliveryTransportEvent>
+            <cbc:OccurrenceDate>2025-02-12</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00</cbc:OccurrenceTime>
+         </cac:RequestedDeliveryTransportEvent>
+         <cac:CarrierParty>
+            <cac:PartyName>
+               <cbc:Name>Interlogic B.V.</cbc:Name>
+            </cac:PartyName>
+            <cac:PhysicalLocation>
+               <cac:Address>
+                  <cbc:CityName>Coevorden</cbc:CityName>
+                  <cbc:PostalZone>7742PT</cbc:PostalZone>
+                  <cac:AddressLine>
+                     <cbc:Line>De Mars 9</cbc:Line>
+                  </cac:AddressLine>
+                  <cac:Country>
+                     <cbc:IdentificationCode>NL</cbc:IdentificationCode>
+                  </cac:Country>
+               </cac:Address>
+               <cac:LocationCoordinate>
+                  <cbc:LatitudeDegreesMeasure unitCode="dd">6.7313600000169</cbc:LatitudeDegreesMeasure>
+                  <cbc:LongitudeDegreesMeasure unitCode="dd">52.649200000112</cbc:LongitudeDegreesMeasure>
+               </cac:LocationCoordinate>
+            </cac:PhysicalLocation>
+         </cac:CarrierParty>
+         <cac:OriginalDespatchTransportationService>
+            <cbc:TransportServiceCode>Default</cbc:TransportServiceCode>
+            <cac:TransportEquipment>
+               <cbc:TransportEquipmentTypeCode>2</cbc:TransportEquipmentTypeCode>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>quantity</cbc:AttributeID>
+                  <cbc:Measure unitCode="DR">6.000</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>grossWeight</cbc:AttributeID>
+                  <cbc:Measure unitCode="">1370.000</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>netWeight</cbc:AttributeID>
+                  <cbc:Measure unitCode="">0.000</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>chargeableWeight</cbc:AttributeID>
+                  <cbc:Measure unitCode="">1750.000</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>volume</cbc:AttributeID>
+                  <cbc:Measure unitCode="C">5.303</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>cubicMeters</cbc:AttributeID>
+                  <cbc:Measure unitCode="">0.000</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>loadingMeters</cbc:AttributeID>
+                  <cbc:Measure unitCode="">1.000</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>goodsValue</cbc:AttributeID>
+                  <cbc:Measure unitCode="">0.00</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:MeasurementDimension>
+                  <cbc:AttributeID>loadIndex</cbc:AttributeID>
+                  <cbc:Measure unitCode="">0.000</cbc:Measure>
+               </cac:MeasurementDimension>
+               <cac:OperatingParty>
+                  <cac:PartyIdentification>
+                     <cbc:ID schemeID="codriver">0</cbc:ID>
+                  </cac:PartyIdentification>
+                  <cac:PartyIdentification>
+                     <cbc:ID schemeID="codriver">0</cbc:ID>
+                  </cac:PartyIdentification>
+               </cac:OperatingParty>
+            </cac:TransportEquipment>
+            <cac:ShipmentStage>
+               <cac:LoadingPortLocation>
+                  <cbc:ID>Z-NL</cbc:ID>
+               </cac:LoadingPortLocation>
+               <cac:UnloadingPortLocation>
+                  <cbc:ID>Z-DE</cbc:ID>
+               </cac:UnloadingPortLocation>
+            </cac:ShipmentStage>
+         </cac:OriginalDespatchTransportationService>
+      </cac:Consignment>
+      <cac:ShipmentStage>
+         <cbc:ShipmentStageType>trip</cbc:ShipmentStageType>
+         <cbc:TransportModeCode>30</cbc:TransportModeCode>
+         <cbc:TransportMeansTypeCode>0</cbc:TransportMeansTypeCode>
+         <cac:TransportMeans>
+            <cac:RoadTransport>
+               <cbc:LicensePlateID>0</cbc:LicensePlateID>
+            </cac:RoadTransport>
+         </cac:TransportMeans>
+         <cac:LoadingTransportEvent>
+            <cbc:OccurrenceDate>2025-02-11</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+         </cac:LoadingTransportEvent>
+         <cac:DeliveryTransportEvent>
+            <cbc:OccurrenceDate>2025-02-12</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00</cbc:OccurrenceTime>
+         </cac:DeliveryTransportEvent>
+         <cac:EstimatedDepartureTransportEvent>
+            <cbc:OccurrenceDate>2025-02-11</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>08:00:00+01:00</cbc:OccurrenceTime>
+         </cac:EstimatedDepartureTransportEvent>
+         <cac:EstimatedArrivalTransportEvent>
+            <cbc:OccurrenceDate>2025-02-12</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00+01:00</cbc:OccurrenceTime>
+         </cac:EstimatedArrivalTransportEvent>
+      </cac:ShipmentStage>
+      <cac:ShipmentStage>
+         <cbc:ShipmentStageType>trip</cbc:ShipmentStageType>
+         <cbc:TransportModeCode>30</cbc:TransportModeCode>
+         <cbc:TransportMeansTypeCode>0</cbc:TransportMeansTypeCode>
+         <cac:TransportMeans>
+            <cac:RoadTransport>
+               <cbc:LicensePlateID>0</cbc:LicensePlateID>
+            </cac:RoadTransport>
+         </cac:TransportMeans>
+         <cac:LoadingTransportEvent>
+            <cbc:OccurrenceDate>2025-02-11</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+         </cac:LoadingTransportEvent>
+         <cac:DeliveryTransportEvent>
+            <cbc:OccurrenceDate>2025-02-12</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00</cbc:OccurrenceTime>
+         </cac:DeliveryTransportEvent>
+         <cac:EstimatedDepartureTransportEvent>
+            <cbc:OccurrenceDate>2025-02-11</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>08:00:00+01:00</cbc:OccurrenceTime>
+         </cac:EstimatedDepartureTransportEvent>
+         <cac:EstimatedArrivalTransportEvent>
+            <cbc:OccurrenceDate>2025-02-12</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00+01:00</cbc:OccurrenceTime>
+         </cac:EstimatedArrivalTransportEvent>
+      </cac:ShipmentStage>
+      <cac:FreightAllowanceCharge>
+         <cbc:ID schemeID="freightCharge">1</cbc:ID>
+         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+         <cbc:AllowanceChargeReasonCode>218</cbc:AllowanceChargeReasonCode>
+         <cbc:Amount currencyID="EUR">236.00</cbc:Amount>
+      </cac:FreightAllowanceCharge>
+      <cac:FreightAllowanceCharge>
+         <cbc:ID schemeID="freightCharge">2</cbc:ID>
+         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+         <cbc:AllowanceChargeReasonCode>224</cbc:AllowanceChargeReasonCode>
+         <cbc:Amount currencyID="EUR">5.53</cbc:Amount>
+      </cac:FreightAllowanceCharge>
+   </cac:Shipment>
+   <cac:DocumentReference>
+      <cbc:ID schemeID="messageReferenceNumber">Tm000322951</cbc:ID>
+   </cac:DocumentReference>
+   <cac:DocumentDistribution>
+      <cbc:ID>INTEROLD</cbc:ID>
+      <cbc:DistributionTypeCode>Receiver</cbc:DistributionTypeCode>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeID="ERP:ID">INTEROLD</cbc:ID>
+         </cac:PartyIdentification>
+      </cac:Party>
+   </cac:DocumentDistribution>

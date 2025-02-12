@@ -68,6 +68,43 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
       data = events.map((e: any) => e["cac:TransportEvent"]);
     }
 
+    // Loading Address
+    let loadingAddress1: string;
+    let loadingAddress2: string;
+    const loadingAddressData = data.find(
+      (d: any) => d["cbc:Description"] === "from"
+    )["cac:Location"]["cac:Address"]["cac:AddressLine"];
+    if (Array.isArray(loadingAddressData)) {
+      loadingAddress1 = loadingAddressData[0]["cbc:Line"];
+      loadingAddress2 = loadingAddressData[1]["cbc:Line"];
+    } else {
+      loadingAddress1 = loadingAddressData["cbc:Line"];
+    }
+
+    // Unloading Address
+    let unloadingAddress1: string;
+    let unloadingAddress2: string;
+    const unloadingAddressData = data.find(
+      (d: any) => d["cbc:Description"] === "to"
+    )["cac:Location"]["cac:Address"]["cac:AddressLine"];
+    if (Array.isArray(unloadingAddressData)) {
+      unloadingAddress1 = unloadingAddressData[0]["cbc:Line"];
+      unloadingAddress2 = unloadingAddressData[1]["cbc:Line"];
+    } else {
+      unloadingAddress1 = unloadingAddressData["cbc:Line"];
+    }
+
+    const serviceLevel =
+      inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
+        "cac:ConsolidatedShipment"
+      ]["cac:Consignment"]["cbc:ShippingPriorityLevelCode"];
+
+    // Instructions
+    const instructions =
+      inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
+        "cac:ConsolidatedShipment"
+      ]["cac:Consignment"]["cbc:SpecialInstructions"];
+
     // Build the XML file
     const outputContent = builder.build({
       transportbookings: {
@@ -118,9 +155,8 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                 time: data.find((d: any) => d["cbc:Description"] === "from")[
                   "cbc:OccurrenceTime"
                 ],
-                address1: data.find(
-                  (d: any) => d["cbc:Description"] === "from"
-                )["cac:Location"]["cac:Address"]["cac:AddressLine"]["cbc:Line"],
+                address1: loadingAddress1,
+                address2: loadingAddress2,
                 zipcode: data.find((d: any) => d["cbc:Description"] === "from")[
                   "cac:Location"
                 ]["cac:Address"]["cbc:PostalZone"],
@@ -139,13 +175,17 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                   ],
                 },
                 driverinfo:
-                  inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
-                    "cac:ConsolidatedShipment"
-                  ]["cac:Consignment"]["cbc:SpecialInstructions"]?.join(" / "),
+                  instructions !== undefined
+                    ? Array.isArray(instructions)
+                      ? instructions.join(" / ")
+                      : instructions
+                    : null,
                 remarks:
-                  inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
-                    "cac:ConsolidatedShipment"
-                  ]["cac:Consignment"]["cbc:SpecialInstructions"]?.join(" / "),
+                  instructions !== undefined
+                    ? Array.isArray(instructions)
+                      ? instructions.join(" / ")
+                      : instructions
+                    : null,
               },
               deliveryaddress: {
                 reference: inputObject.Manifest["cac:Shipment"][
@@ -170,9 +210,13 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                 time: data.find((d: any) => d["cbc:Description"] === "to")[
                   "cbc:OccurrenceTime"
                 ],
-                address1: data.find((d: any) => d["cbc:Description"] === "to")[
-                  "cac:Location"
-                ]["cac:Address"]["cac:AddressLine"]["cbc:Line"],
+                fixeddate: Array.isArray(serviceLevel)
+                  ? serviceLevel.includes("FON")
+                  : serviceLevel !== undefined
+                  ? serviceLevel === "FON"
+                  : false,
+                address1: unloadingAddress1,
+                address2: unloadingAddress2,
                 zipcode: data.find((d: any) => d["cbc:Description"] === "to")[
                   "cac:Location"
                 ]["cac:Address"]["cbc:PostalZone"],
@@ -189,13 +233,17 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                   ]["cac:Address"]["cac:Country"]["cbc:IdentificationCode"],
                 },
                 driverinfo:
-                  inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
-                    "cac:ConsolidatedShipment"
-                  ]["cac:Consignment"]["cbc:SpecialInstructions"]?.join(" / "),
+                  instructions !== undefined
+                    ? Array.isArray(instructions)
+                      ? instructions.join(" / ")
+                      : instructions
+                    : null,
                 remarks:
-                  inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
-                    "cac:ConsolidatedShipment"
-                  ]["cac:Consignment"]["cbc:SpecialInstructions"]?.join(" / "),
+                  instructions !== undefined
+                    ? Array.isArray(instructions)
+                      ? instructions.join(" / ")
+                      : instructions
+                    : null,
               },
               cargo: {
                 unitamount:
@@ -209,7 +257,19 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                   ]["cac:Consignment"]["cbc:TotalGoodsItemQuantity"]["#text"],
                 unit_id: {
                   $matchmode: "1",
-                  "#text": "COL",
+                  "#text":
+                    inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
+                      "cac:ConsolidatedShipment"
+                    ]["cac:Consignment"]["cbc:HandlingInstructions"].includes(
+                      "PALLRUILLD:true"
+                    ) ||
+                    inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
+                      "cac:ConsolidatedShipment"
+                    ]["cac:Consignment"]["cbc:HandlingInstructions"].includes(
+                      "PALLRUILLS:true"
+                    )
+                      ? "Euro"
+                      : "COL",
                 },
                 weight:
                   inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
@@ -219,6 +279,41 @@ const generateOutputFile = (inputObject: any, file: string, index: number) => {
                   inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
                     "cac:ConsolidatedShipment"
                   ]["cac:Consignment"]["cbc:LoadingLengthMeasure"]["#text"],
+                // Kooiaap
+                bool1: inputObject.Manifest["cac:Shipment"][
+                  "cac:FreightAllowanceCharge"
+                ]
+                  .map((i: any) => i["cbc:AllowanceChargeReasonCode"])
+                  .includes(238),
+                // Laadklep
+                bool2: inputObject.Manifest["cac:Shipment"][
+                  "cac:FreightAllowanceCharge"
+                ]
+                  .map((i: any) => i["cbc:AllowanceChargeReasonCode"])
+                  .includes(144),
+                // Pallet ruil
+                bool3:
+                  inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
+                    "cac:ConsolidatedShipment"
+                  ]["cac:Consignment"]["cbc:HandlingInstructions"].includes(
+                    "PALLRUILLD:true"
+                  ) ||
+                  inputObject.Manifest["cac:Shipment"]["cac:Consignment"][
+                    "cac:ConsolidatedShipment"
+                  ]["cac:Consignment"]["cbc:HandlingInstructions"].includes(
+                    "PALLRUILLS:true"
+                  ),
+                // ADR
+                adrclass_id: {
+                  $matchmode: "3",
+                  "#text": inputObject.Manifest["cac:Shipment"][
+                    "cac:FreightAllowanceCharge"
+                  ]
+                    .map((i: any) => i["cbc:AllowanceChargeReasonCode"])
+                    .includes(176)
+                    ? "ADR"
+                    : "",
+                },
               },
             },
           },
